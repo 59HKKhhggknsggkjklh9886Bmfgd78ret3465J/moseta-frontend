@@ -1,63 +1,117 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    cart:[]
+    cart: []
 }
 
 const cartSlice = createSlice({
-    name:"cslice",
+    name: "cslice",
     initialState,
-    reducers:{
-        
-        // increase quantity of product in cart
-        increaseQuantityOfProduct:(state,action)=>{
-            const itemIndexDel = state.carts.findIndex((item)=>item.name === action.payload.name)
-
-            state.carts[itemIndexDel].qnty += 1;
-            console.log("hello")
-        },
-
+    reducers: {
 
         // add to cart
         addToCart:(state,action)=>{
-            let present = false;
-            let idx = 0;
-            for (idx = 0 ; idx < state.carts.length ; idx++)
-            {
-                if (state.carts[idx].name === action.payload.name)
-                {
-                    present = true;
-                }    
+               
+            const { category, product, quantity, selectedPrice } = action.payload;
+         
+
+            const isCategoryIncluded = state.cart.some(item => item.category === category );
+            
+            // if category not exist
+            if (!isCategoryIncluded) {
+                const objToPush = {
+                    category: category,
+                    products: [{ product, quantity, selectedPrice }]
+                }
+                state.cart.push(objToPush);
             }
-            if (present === false)
-            {
-                let temp = {...action.payload, qnty:1}
-                state.carts = [...state.carts, temp]
+
+            // if category exists
+            if (isCategoryIncluded) {
+                const categoryIndex = state.cart.findIndex(item => item.category === category);
+                
+                // if product not exist in the category then add it
+                const productIndex = state.cart[categoryIndex].products.findIndex(item => item.product.name === product.name);
+                if (productIndex === -1) {
+                    state.cart[categoryIndex].products.push({ product, quantity, selectedPrice });
+                } else {
+                    // if product exist in category then replace it because selected price can be different
+                    state.cart[categoryIndex].products[productIndex] = { product, quantity, selectedPrice };
+                }
             }
         },
 
-        // remove from cart
-        removeFromCart:(state,action)=>{
-            const itemIndexDel = state.carts.findIndex((item)=>item.name === action.payload.name)
 
-            state.carts[itemIndexDel].qnty -= 1;
-
-            // if (state.carts[itemIndexDel].qnty <= 0)
-            // {
-            //     const data = state.carts.filter((item)=> item.name != action.payload.name)
-            //     state.carts = data;
-            // }
-        },
 
         // delete from cart
-        deleteFromCart:(state,action)=>{
-            const itemIndexDel = state.carts.findIndex((item)=>item.name === action.payload.name)
+        deleteFromCart: (state, action) => {
+            const { product, key } = action.payload;
+            
+            // Check if the key is within the bounds of the cart array
+            if (key >= 0 && key < state.cart.length) {
+            
+                // Get the category object at the specified index
+                const categoryObj = state.cart[key];
+                
+                // Find the index of the product within the category's products array
+                const productIndex = categoryObj.products.findIndex(item => item.product.name === product.product.name);
+        
+                // If the product is found, remove it from the category's products array
+                if (productIndex !== -1) {
+                    
+                    categoryObj.products.splice(productIndex, 1);
+                    
+                    // If the products array becomes empty after removal, remove the entire category object
+                    if (categoryObj.products.length === 0) {
+                        state.cart.splice(key, 1);
+                    }
+                }
+            }
+        },
 
-            state.carts[itemIndexDel].qnty += 1;
-            console.log("hello")
-        }
+
+        // increase quantity
+        increaseProductQuantity: (state, action) => {
+            const { product, key } = action.payload;
+        
+            // Check if the key is within the bounds of the cart array
+            if (key >= 0 && key < state.cart.length) {
+                // Get the category object at the specified index
+                const categoryObj = state.cart[key];
+                
+                // Find the index of the product within the category's products array
+                const productIndex = categoryObj.products.findIndex(item => item.product.name === product.name);
+        
+                // If the product is found, increase its quantity
+                if (productIndex !== -1) {
+                    categoryObj.products[productIndex].quantity += 1;
+                }
+            }
+        },
+        
+        
+
+        // decrease quantity
+        decreaseProductQuantity: (state, action) => {
+            const { product, key } = action.payload;
+        
+            // Check if the key is within the bounds of the cart array
+            if (key >= 0 && key < state.cart.length) {
+                // Get the category object at the specified index
+                const categoryObj = state.cart[key];
+                
+                // Find the index of the product within the category's products array
+                const productIndex = categoryObj.products.findIndex(item => item.product.name === product.name);
+        
+                // If the product is found and its quantity is greater than 1, decrease its quantity
+                if (productIndex !== -1 && categoryObj.products[productIndex].quantity > 1) {
+                    categoryObj.products[productIndex].quantity -= 1;
+                }
+            }
+        },
+        
     }
 });
 
-export const {increaseQuantityOfProduct, addToCart, removeFromCart, deleteFromCart} = cartSlice.actions;
+export const { addToCart , deleteFromCart , increaseProductQuantity , decreaseProductQuantity} = cartSlice.actions;
 export default cartSlice.reducer;
