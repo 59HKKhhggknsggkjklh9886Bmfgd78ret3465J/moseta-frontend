@@ -1,0 +1,45 @@
+.activeMenuOptions
+{
+    height: 15rem;
+    width: 8rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.315);
+    position: absolute;
+    border-radius: 0.5rem;
+    right: 2rem;
+    top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    /* align-items: center; */
+    /* justify-content: start; */
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+.InActiveMenuOptions
+{
+    display: none;
+}
+.activeMenuOptions > p
+{
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    cursor: pointer;
+    /* background-color: green; */
+    display: flex;
+    /* width: 100%; */
+    width: max-content;
+    justify-content: start;
+    transition: all 0.1s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+.activeMenuOptions > p:hover
+{
+    /* transform: translateX(0.2rem); */
+    border-bottom: 1px solid black;
+    transition: all 0.1s ease;
+}
+
+
+
+

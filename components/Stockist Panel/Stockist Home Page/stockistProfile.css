@@ -1,0 +1,164 @@
+.stockistProfileBody
+{
+    min-height: calc(100svh - 4rem);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+.stockistProfileBody > div
+{
+    display: flex;
+}
+
+.stockistProfileData h1
+{
+    /* border: 1px blue solid; */
+    font-weight: 600;
+    font-size: 1rem;
+    width: 25vw;
+    display: flex;
+    align-items: start;
+}
+
+.stockistProfileBody h2
+{
+    font-weight: 300;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.stockistProfileData
+{
+    margin-left: 15vw;
+    margin-top: 5rem;
+    /* border: 1px green solid; */
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.stockistProfileData > div
+{
+    display: flex;
+}
+.stockistProfilePicBackground
+{
+    margin-top: 3rem;
+    margin-left: 3rem;
+    height: 25vw;
+    width: 25vw;
+
+    background-color: rgb(26, 26, 26);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stockistProfilePicBackground > div
+{
+    height: 96%;
+    width: 96%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.stockistProfilePic
+{
+    height: 100%;
+}
+
+.editStockistProfileBtn
+{
+    user-select: none;
+    margin-top: 1rem;
+    width: max-content;
+    border: none;
+    background-color: #674188;
+    color: white;
+    padding: 0.2rem 2rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+}
+.editStockistProfileBtn:hover
+{
+    background-color: #492568;
+}
+
+.monthlyProfitTitle
+{
+    display: flex;
+    justify-content: center;
+    /* background-color: red; */
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.stockistProfileBody > div
+{
+    padding-bottom: 5rem;
+}
+
+.stockistProfileBody:nth-child(0)
+{
+    border-bottom: 1px solid rgb(71, 71, 71);
+}
+
+.stockistAddress
+{
+    display: flex;
+    flex-wrap: wrap;
+    width: 20vw;
+    /* border: 1px green solid; */
+    height: max-content;
+}
+
+
+@media (max-width:1100px)
+{
+    .stockistAddress
+    {
+        all: unset;
+        width: 100%;
+        margin-left: 11.5vw;
+    }
+}
+@media (max-width:800px)
+{
+    .stockistProfileBody > div
+    {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+    
+    .stockistProfileData
+    {
+        border: 1px green solid;
+        margin-left: 20px;
+        width: calc(100% - 20px);
+    }
+    
+    .stockistAddress
+    {
+        all: unset;
+        /* border: 1px solid green; */
+        width: 50vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width:600px)
+{
+    .stockistProfileData h2
+    {
+        all: unset;
+        margin-left: 5rem;
+        border: 1px blue solid;
+    }
+}

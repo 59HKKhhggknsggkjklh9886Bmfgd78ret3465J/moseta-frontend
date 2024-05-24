@@ -1,0 +1,14 @@
+.setupProfileBody
+{
+    height: 100svh;
+    width: 100%;
+    background-color: var(--background-color);
+}
+
+.setupProfileFormParent
+{
+    /* background-color: green; */
+    height: calc(100% - 4rem);
+    display: flex;
+    justify-content: center;
+}

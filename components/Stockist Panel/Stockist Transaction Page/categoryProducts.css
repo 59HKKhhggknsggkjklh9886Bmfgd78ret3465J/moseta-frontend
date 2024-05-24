@@ -1,0 +1,185 @@
+.categoryProductsBody
+{
+    height: max-content;
+    width: max-content;
+    background-color: white;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+}
+
+.categoryProductsTitle
+{
+    /* border: 1px solid green; */
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.categoryProductsTable
+{
+    margin-top: 2rem;
+}
+
+.categoryProductsTableName
+{
+    display: flex;
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+.categoryProductsTableName > p
+{
+    /* background-color: rgb(102, 102, 238); */
+}
+
+.categoryProductsDetails
+{
+    padding-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    /* border: 1px green solid; */
+    height: 20rem;
+    overflow: scroll;
+}
+
+
+
+.productDetails
+{
+    display: flex;
+    align-items: center;
+    border-radius: 0.3rem;
+    height: max-content;
+    padding: 0.5rem 0.5rem;
+    width: 100%;
+    background-color: #C3ACD0;
+}
+
+.productDetails > p
+{
+    /* border: 1px solid red; */
+}
+
+
+
+.categoryProductsCategorySno,
+.productDetailsSno
+{
+    width: 4rem;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+
+.categoryProductsCategoryName,
+.productDetailsName
+{
+    width: 20rem;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+.categoryProductsCategoryName
+{
+    display: flex;
+    justify-content: center;
+}
+
+
+.productDetailsName
+{
+    padding: 0 0.5rem;
+    width: 19rem;
+}
+
+.categoryProductsCategoryPriceType,
+.productDetailsPriceType
+{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    width: 35%;
+}
+
+/* .categoryProductsCategoryQuantity,
+.productDetailsQuantity
+{
+    width: 6rem;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+} */
+
+.categoryProductsCategoryPrice,
+.productDetailsPrice
+{
+    margin-left: 0rem;
+    width: 7rem;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.productDetailsPriceType
+{
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 2rem;
+    height: 2rem;
+    padding: 0 0.5rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.productDetailsAddBtn
+{
+    background-color: #67418800;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.6rem;
+    margin-right: 0.5rem;
+}
+
+.productDetailsAddBtn > button:hover
+{
+    cursor: pointer;
+    background-color: #4e286e;
+}
+
+
+.productDetailsAddBtn > button
+{
+    background-color: #674188;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    color: white;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    justify-content: center;
+}
+.productDetailsParent
+{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+.headerBody
+{
+    user-select: none;
+    height: 4rem;
+    width: 100%;
+    /* background-color: green; */
+    box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.322);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menuIcon
+{
+    user-select: none;
+    cursor: pointer;
+    height: 1rem;
+    overflow: hidden;
+    font-size: 2rem;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    margin-right: 3rem;
+    position: relative;
+}
+
+.siteLogo
+{
+    user-select: none;
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-left: 3rem;
+    text-decoration: none;
+    color: rgb(32, 32, 32);
+}
+.siteLogo span
+{
+    font-size: 2rem;
+    font-weight: 400;
+    color: #674188;
+}
+
+.headerMenu
+{
+    /* border: 1px green solid; */
+    display: flex;
+    align-items: center;
+}
+
+.stockistCreateTransaction > button
+{
+    border: none;
+    background-color: #674188;
+    color: white;
+    padding: 0.3rem 1rem;
+    margin-right: 3rem;
+    font-size: 1.05rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.432);
+    transition: background-color 0.2s ease;
+}
+.stockistCreateTransaction > button:hover
+{
+    background-color: #4b246d;
+    transition: background-color 0.2s ease;
+}

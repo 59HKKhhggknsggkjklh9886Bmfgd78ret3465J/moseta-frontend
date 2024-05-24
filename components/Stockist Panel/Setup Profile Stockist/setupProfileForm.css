@@ -1,0 +1,146 @@
+.setupProfileFormBody
+{
+    margin-top: 1rem;
+    height: max-content;
+    width: 50rem;
+    background-color: #F7EFE5;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* border: 1px green solid; */
+}
+
+
+.formcredentials
+{
+    display: flex;
+    gap: 1rem;
+}
+
+.formcredentials > div
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.formcredentials > div > input
+{
+    width: calc(100% - 1rem);
+    height: 3rem;
+    border: none;
+    outline: none;
+    padding-left: 1rem;
+    border-bottom: 2px solid #67418800;
+    transition: border-bottom 0.2s ease;
+}
+.formcredentials > div > input:valid,
+.formcredentials > div > input:focus
+{
+    border-bottom: 2px solid #674188;
+    transition: border-bottom 0.2s ease;
+}
+.formcredentials2 > input:valid,
+.formcredentials2 > input:focus
+{
+    border-bottom: 2px solid #674188;
+    transition: border-bottom 0.2s ease;
+}
+
+.formcredentials2 > input
+{
+    width: calc(100% - 1rem);
+    height: 3rem;
+    border: none;
+    outline: none;
+    padding-left: 1rem;
+    border-bottom: 2px solid #67418800;
+    transition: border-bottom 0.2s ease;
+}
+
+.setupProfileTitle
+{
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(46, 46, 46);
+    margin-bottom: 2rem;
+}
+
+.setupProfileTitle > span
+{
+    color: #8e34c2;
+}
+
+.setupBtn
+{
+    margin-top: 2rem;
+    height: 2.5rem;
+    width: max-content;
+    padding: 0.1rem 0.5rem;
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    background-color: #674188;
+    color: white;
+    border-radius: 0.3rem;
+    transition: all 0.2s ease;
+}
+.setupBtn:hover
+{
+    background-color: #512a72;
+    transition: all 0.2s ease;
+}
+.setupBtn:active
+{
+    background-color: #674188;
+}
+
+.uploadStockistProfilePicImg
+{
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+}
+
+.uploadStockistProfilePic
+{
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.custom-file-upload:active
+{
+    background-color: #532e74;
+}
+
+
+.custom-file-upload
+{
+    cursor: pointer;
+    background-color: #674188;
+    color: white;
+    padding: 0.5rem 2rem;
+    margin-left: 3rem;
+    border-radius: 0.3rem;
+}
+
+.uploadStockistProfilePic > div
+{
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    background-color: rgb(54, 54, 54);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="file"]
+{
+    display: none;
+}

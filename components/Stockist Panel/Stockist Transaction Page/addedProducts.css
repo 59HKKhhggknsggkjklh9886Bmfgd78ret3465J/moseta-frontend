@@ -1,0 +1,141 @@
+.addedProductsBody
+{
+    height: inherit;
+    width: 30rem;
+    background-color: rgb(255, 255, 255);
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+}
+
+.addedProductsTitle
+{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.addedProduct
+{
+    display: flex;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    background-color: rgb(78, 235, 138);
+    justify-content: space-between;
+    align-items: center;
+}
+.addedProduct > p
+{
+    display: flex;
+    align-items: center;
+}
+
+.addedProduct > div
+{
+    display: flex;
+    align-items: center;
+}
+
+.addedProductQuantity
+{
+    user-select: none;
+}
+
+/* .addedProductSno
+{
+    background-color: green;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.addedProductDelete:hover
+{
+    cursor: pointer;
+    background-color: rgb(20, 129, 62);
+}
+
+.addedProductDelete
+{
+    background-color: rgb(28, 167, 81);
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+}
+
+.addedProductSno
+{
+    /* border: 1px solid green; */
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addedProductName
+{
+    /* border: 1px blue solid; */
+    width: 15rem;
+}
+
+.addedProductQuantity
+{
+    /* border: 1px yellow solid; */
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.addedProductQuantityNumber
+{
+    width: 1.5rem;
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addedProductQuantityChangeBtn
+{
+    /* border: 1px red solid; */
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(7, 94, 207);
+    cursor: pointer;
+    color: white;
+}
+
+.addedProductPrice
+{
+    /* border: 1px solid blue; */
+}
+
+.addedProductDelete:hover
+{
+    color: rgb(255, 79, 79);  
+    background-color: white;  
+    /* border: 1px solid blue; */
+}
+
+
+.addedProductsDetails
+{
+    /* border: 1px green solid; */
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    overflow: scroll;
+}

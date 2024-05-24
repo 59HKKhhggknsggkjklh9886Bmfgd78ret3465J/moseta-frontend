@@ -1,0 +1,188 @@
+.loginFormBody
+{
+    height: 20rem;
+    width: 30rem;
+    background-color: rgba(255, 255, 255, 0.452);
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-bottom: 8rem;
+    padding: 5px;
+}
+
+.loginUserType
+{
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    width: 65%;
+    margin-bottom: 1rem;
+}
+
+.loginUserType > p
+{
+    display: flex;
+    align-items: center;
+}
+.loginUserType h1
+{
+    height: 2rem;
+    width: 10rem;
+    display: flex;
+    /* border: 1px green solid; */
+    align-items: center;
+}
+.loginActiveOption
+{
+    /* border: 1px solid green; */
+    
+    color: #3598da;
+    /* background-color: rgb(255, 255, 255); */
+    transition: width 0.4s ease;
+    font-weight: 400;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+
+    border-bottom: 2px solid #237ebb;
+}
+
+.loginInActiveOption
+{
+    border-bottom: 2px solid #237ebb00;
+    cursor: pointer;
+    /* border: 1px solid green; */
+    display: flex;
+    font-weight: 400;
+    justify-content: center;
+    
+    font-size: 1rem;
+    color: rgb(121, 121, 121);
+    transition: all 0.3s ease;
+}
+.loginInActiveOption:hover
+{
+    background-color: #9599e265;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.loginCredentials
+{
+    /* border: 1px green solid; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;   
+    background-color: white;
+    height: calc(100%);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 1rem;
+    border-radius: 0.4rem;
+}
+.loginNamePass
+{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.loginCredentials p
+{
+    font-size: 1rem;
+    /* border: 1px blue solid; */
+    width: 80%;
+    user-select: none;
+}
+.loginCredentials input
+{
+    width: calc(80% - 1rem);
+    height: 1.5rem;
+    margin-top: 0.5rem;
+    outline: none;
+    border: none;
+    border-bottom: 2px rgb(88, 88, 88) solid;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.loginCredentials input:focus,
+.loginCredentials input:valid
+{
+    border-bottom: 2px rgb(108, 150, 241) solid;
+    transition: all 0.2s ease;
+    background-color: #8bc5ec3d;
+}
+
+.passwordInput
+{
+    /* border: 1px green solid; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.passwordEye
+{
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    height: 3rem;
+    width: 3rem;
+    background-color: #8BC6EC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    right: -1rem;
+    top: 0.25rem;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.loginBtnArea
+{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.loginBtn
+{
+    margin-right: 5.5rem;
+    border: none;
+    font-weight: 300;
+    background-color: #3598da;
+    color:rgb(255, 255, 255);
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.2rem;
+    width: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    height: 2rem;
+    transition: all 0.2s ease;
+}
+.loginBtn:hover
+{
+    background-color: #237ebb;
+    transition: all 0.2s ease;
+    box-shadow: 1px 1px 10px rgb(177, 177, 177);
+}
+
+
+@media (max-width: 620px)
+{
+    .loginFormBody
+    {
+        width: 95svw;
+    }
+}
