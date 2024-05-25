@@ -88,7 +88,9 @@ const StockistTransactionPage = () => {
 
                 <div className='container2'>
                     <CategoryProducts selectedCategory = {selectedCategory} />
-                    <AddedProducts/>
+                    
+                        <AddedProducts/>
+                    
                 </div>
             </div>
         </div>

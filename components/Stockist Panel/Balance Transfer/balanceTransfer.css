@@ -10,6 +10,7 @@
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(10px);
+    overflow: scroll;
 }
 
 .balanceTransferBodyOff
@@ -53,13 +54,23 @@
     margin-top: 1rem;
 }
 
+.balanceTransferContent
+{
+    height: 100%;
+}
+
+
 .balanceTransferContent form
 {
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     height: 100%;
+    padding: 2rem 5rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-content: space-between;
+
+    overflow: scroll;
 }
 
 .balanceTransferContent form>div
@@ -73,7 +84,7 @@
 
     margin-top: 2rem;
     /* border: 1px green solid; */
-    height: calc(90% - 4rem - 3rem - 2rem);
+    max-height: calc(90% - 4rem - 3rem - 2rem);
     width: calc(90% - 10rem);
     border-radius: 0.6rem;
     background-color: #C3ACD0;

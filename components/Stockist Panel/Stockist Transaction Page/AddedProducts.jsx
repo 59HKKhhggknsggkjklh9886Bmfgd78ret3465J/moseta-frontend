@@ -52,7 +52,7 @@ const AddedProducts = () => {
                             </div>
 
                             <p className='addedProductPrice'>{product.selectedPrice * product.quantity}</p>
-
+                            <p className='addedProductDiscount'></p>
                             <button className='addedProductDelete' onClick={() => deleteHandler(product , key)}><MdDelete /></button>
                         </div>
                     ))
@@ -60,6 +60,17 @@ const AddedProducts = () => {
                 ))
             }
         </div>
+        <div className='cartDetails'>
+            <div className=''>
+                <p>Total Price : </p>
+                <p>Transportation Charges : </p>
+                <p>Installing Charges : </p>
+
+                <button className='commitTransactionBtn' type='submit'>Commit Transaction</button>
+            </div>
+        </div>
+
+
     </div>
   )
 }

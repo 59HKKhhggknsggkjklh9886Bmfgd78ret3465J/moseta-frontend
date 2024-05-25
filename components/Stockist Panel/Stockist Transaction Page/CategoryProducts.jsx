@@ -44,6 +44,7 @@ const CategoryProducts = ({selectedCategory}) => {
                 <p className='categoryProductsCategorySno'>S.No.</p>
                 <p className='categoryProductsCategoryName'>Name</p>
                 <p className='categoryProductsCategoryPriceType'>Price Type</p>
+                <p className='categoryProductsCategoryDiscount'>Discount</p>
             </div>
             <div className='categoryProductsDetails'>
                 {
@@ -62,6 +63,11 @@ const CategoryProducts = ({selectedCategory}) => {
                                 <option value={`customer:${ele.product.customerPriceWithGst}`}>Customer Price : {ele.product.customerPriceWithGst}</option>
                                 <option value={`mcp:${ele.product.mcpWithGst}`}>MCP Price : {ele.product.mcpWithGst}</option>
                               </select>
+
+                              <div className='productDetailsDiscount'>
+
+                                <input className='' type="text" />
+                              </div>
                           </div>
                           <div className='productDetailsAddBtn' onClick={() => addData(ele)}>
                             <button><IoIosAdd /></button>

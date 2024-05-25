@@ -10,6 +10,8 @@ const ClientTransfer = ({clientOn, setClientOn}) => {
                 <p><MdClose /></p>
             </div>
             <p className='balanceTransferTitle'>Client Transfer</p>
+            <div className='balanceTransferContent'>
+                
             <form className='balanceTransferContent'>
 
                     <div className='stockistTransactionOptions'>
@@ -66,6 +68,9 @@ const ClientTransfer = ({clientOn, setClientOn}) => {
                     <button type='submit'>Commit Transaction</button>
                 </div>
             </form>
+
+            
+            </div>
         </div>
 
     </div>
