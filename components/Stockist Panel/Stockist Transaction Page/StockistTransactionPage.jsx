@@ -62,9 +62,21 @@ const StockistTransactionPage = () => {
                             <input type="radio" name="abc" value="customer" onChange={(e) => clientChangeHandler(e)} />Customer
                         </label>
                     </div>
+
                 </div>
 
                 <div className='stockistTransactionProduct'>
+                    <div className='stockTransferDropDown'>
+                    <p>Clients : </p>
+                    <select>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                        <option>1</option>
+                    </select>
+                </div>
                     <p>Select Product Category :</p>
                     <select className='productCategories' name="selectedCategory" onChange={handleCategoryChange}>
                         <option value="">Select Category</option>
