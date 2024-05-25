@@ -154,6 +154,21 @@
 
 
 @media (max-width:800px){
+    input
+    {
+        height: 10vw;
+        border-radius: 0.6rem;
+        font-size: 1.1rem;
+    }
+    .balanceTransferBodyClose p
+    {
+        width: 12%;
+        height: 8%;
+        font-size: 2.5rem;
+        /* all: unset; */
+        /* background-color: yellow; */
+        border: 1px green solid;
+    }
     .balanceTransferPopupBody
     {
         width: 100%;
@@ -184,5 +199,10 @@
         /* border: 1px red solid; */
         display: flex;
         justify-content: center;
+    }
+
+    .balanceTransferCommitTransaction > button
+    {
+        font-size: 1.5rem;
     }
 }
