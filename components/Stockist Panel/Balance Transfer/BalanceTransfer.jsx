@@ -5,21 +5,25 @@ import { MdClose } from "react-icons/md";
 const BalanceTransfer = ({on, setOn}) => {
   return (
     <div className={on ? 'balanceTransferBody' : 'balanceTransferBodyOff'}>
+    
         <div className='balanceTransferPopupBody'>
+
             <div onClick={()=>{setOn(false)}} className='balanceTransferBodyClose'>
                 <p><MdClose /></p>
             </div>
+
             <p className='balanceTransferTitle'>Balance Transfer</p>
-            <div className='balanceTransferContent'>
 
             
-            <form className=''>
+            <form className='balanceTransferContent'>
+
                 <div className='balanceTransferData'>
                     <label  className="balanceTransferLabel">
                         Document Number
                     </label>
                     <input required type='text'/>
                 </div>
+
                 <div className='balanceTransferData'>
                     <label  className="balanceTransferLabel">
                         Amount
@@ -32,6 +36,7 @@ const BalanceTransfer = ({on, setOn}) => {
                         }}
                     />
                 </div>
+
                 <div className='balanceTransferData'>
                     <p>Proof</p>
                     <label className="balanceTransferCustomLabel">
@@ -45,7 +50,6 @@ const BalanceTransfer = ({on, setOn}) => {
                 </div>
             </form>
             
-            </div>
             
         </div>
 

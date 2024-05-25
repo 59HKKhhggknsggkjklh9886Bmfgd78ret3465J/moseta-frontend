@@ -7,7 +7,7 @@ import { decreaseProductQuantity, deleteFromCart, increaseProductQuantity } from
 
 const AddedProducts = () => {
 
-    const {cart} = useSelector((state)=>state.cart);
+    const {cart , totalPrice} = useSelector((state)=>state.cart);
     const {stock} = useSelector((state)=>state.stock);
 
     const dispatch = useDispatch();
@@ -25,17 +25,17 @@ const AddedProducts = () => {
         dispatch(decreaseProductQuantity({product , key}))
     }
 
-    const [totalPrice, setTotalPrice] = useState(0);
 
   return (
     <div className='addedProductsBody'>
-        <h2 className='addedProductsTitle'>Added Products {totalPrice}</h2>
+        <h2 className='addedProductsTitle'>Added Products</h2>
 
         <div className='addedProductsDetails'>
             {
                 cart.map((item,key)=>(                  
                     
                     item.products.map((product , k) => (
+
                         <div key={k} className='addedProduct'>
                             
                             {/* <p className='addedProductSno'>{ k+1 }.</p>x    */}
@@ -51,8 +51,12 @@ const AddedProducts = () => {
                                 }}>+</p>
                             </div>
 
-                            <p className='addedProductPrice'>{product.selectedPrice * product.quantity}</p>
-                            <p className='addedProductDiscount'></p>
+                            <p className='addedProductPrice'>₹{(product.priceAfterDiscount * product.quantity).toFixed(2)}</p>
+
+                            <p className='addedProductDiscount'>
+                                -{product.discount}%
+                            </p>
+                            
                             <button className='addedProductDelete' onClick={() => deleteHandler(product , key)}><MdDelete /></button>
                         </div>
                     ))
@@ -60,11 +64,37 @@ const AddedProducts = () => {
                 ))
             }
         </div>
+
         <div className='cartDetails'>
-            <div className=''>
-                <p>Total Price : </p>
-                <p>Transportation Charges : </p>
-                <p>Installing Charges : </p>
+
+            <div className='cartDetailsContainer'>
+                <p>Total Price : {(totalPrice).toFixed(2)}</p>
+                
+                <div className='additionalCharges'>
+
+                    <label htmlFor="">
+                        <p>Transportation Charges</p>
+                        <input required
+                            onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {
+                                event.preventDefault();
+                                }
+                            }}
+                        />
+                    </label>
+                    
+                    <label htmlFor="">
+                        <p>Installation Charges</p>
+                        <input required
+                            onKeyPress={(event) => {
+                                if (!/[0-9]/.test(event.key)) {
+                                event.preventDefault();
+                                }
+                            }}
+                        />
+                    </label>
+
+                </div>
 
                 <button className='commitTransactionBtn' type='submit'>Commit Transaction</button>
             </div>

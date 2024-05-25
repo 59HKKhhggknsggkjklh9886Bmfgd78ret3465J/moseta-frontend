@@ -1,6 +1,6 @@
 .addedProductsBody
 {
-    width: 40%;
+    width: 45%;
     background-color: rgb(255, 255, 255);
     margin-top: 2rem;
     padding: 0.5rem 1rem;
@@ -15,11 +15,12 @@
 .addedProduct
 {
     display: flex;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem ;
     border-radius: 0.3rem;
     background-color: rgb(78, 235, 138);
     justify-content: space-between;
     align-items: center;
+    gap: 0.5rem;
 }
 .addedProduct > p
 {
@@ -79,7 +80,7 @@
 .addedProductName
 {
     /* border: 1px blue solid; */
-    width: 15rem;
+    width: 13rem;
 }
 
 .addedProductQuantity
@@ -144,6 +145,9 @@
     background-color: rgb(25, 184, 78);
     width: 3rem;
     height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cartDetails > div>p
@@ -155,7 +159,7 @@
     
     border-top: 1px solid black;
     margin-top: 1rem;
-    height: 10rem;
+    height: fit-content;
     width: 100%;
     /* border: 1px red solid; */
     display: flex;
@@ -167,6 +171,10 @@
 {
     /* border: 1px green solid; */
     height: 90%;
+}
+
+.cartDetailsContainer{
+    margin-top: 1rem;
 }
 
 .commitTransactionBtn
@@ -184,3 +192,26 @@
     {
         box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.288);
     }
+
+.additionalCharges{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;  
+}
+
+.additionalCharges > label{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.additionalCharges > label > input{
+
+    padding: 0 1rem;
+
+}
