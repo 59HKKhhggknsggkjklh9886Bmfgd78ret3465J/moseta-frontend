@@ -47,21 +47,32 @@
     align-items: center;
 }
 
-.stockistCreateTransaction > button
+.stockistCreateTransaction
+{
+    display: flex;
+    gap: 1rem;
+    margin-right: 3rem;
+}
+
+
+.stockistCreateTransaction button
 {
     border: none;
     background-color: #674188;
     color: white;
     padding: 0.3rem 1rem;
-    margin-right: 3rem;
+    /* margin-right: 3rem; */
     font-size: 1.05rem;
     border-radius: 0.2rem;
     cursor: pointer;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.432);
     transition: background-color 0.2s ease;
 }
-.stockistCreateTransaction > button:hover
+.stockistCreateTransaction button:hover
 {
     background-color: #4b246d;
     transition: background-color 0.2s ease;
 }
+
+
+/* hello */

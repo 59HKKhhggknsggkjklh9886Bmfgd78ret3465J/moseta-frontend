@@ -117,4 +117,6 @@ row
 .container2
 {
     display: flex;
+    width: 100%;
+    border: 1px solid green;
 }

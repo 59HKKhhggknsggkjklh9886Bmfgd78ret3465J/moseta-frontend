@@ -10,6 +10,9 @@ const AddedProducts = () => {
     const {cart} = useSelector((state)=>state.cart);
     const {stock} = useSelector((state)=>state.stock);
 
+
+    const {stock} = useSelector((state)=>state.stock);
+
     const dispatch = useDispatch();
 
     const deleteHandler = (product , key) => {
@@ -25,19 +28,19 @@ const AddedProducts = () => {
         dispatch(decreaseProductQuantity({product , key}))
     }
 
+    const [totalPrice, setTotalPrice] = useState(0);
 
   return (
     <div className='addedProductsBody'>
-        <h2 className='addedProductsTitle'>Added Products</h2>
+        <h2 className='addedProductsTitle'>Added Products {totalPrice}</h2>
 
         <div className='addedProductsDetails'>
             {
-                cart.map((item,key)=>(
-
+                cart.map((item,key)=>(                  
+                    
                     item.products.map((product , k) => (
-                        
                         <div key={k} className='addedProduct'>
-                       
+                            
                             {/* <p className='addedProductSno'>{ k+1 }.</p>x    */}
                             <p className='addedProductName'>{product.product.name}</p>
 
