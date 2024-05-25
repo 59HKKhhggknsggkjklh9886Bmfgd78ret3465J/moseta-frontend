@@ -29,7 +29,7 @@ const Header = () => {
             setOn(true)
         }}>Balance Transfer</button>
         <Link to="/transaction">
-            <button onClick={()=>setTransactionDropDownClass(!transactionDropDownClass)}>Stock Transfer</button>
+            <button>Stock Transfer</button>
         </Link>
         <button onClick={()=>{
           setClientOn(true)

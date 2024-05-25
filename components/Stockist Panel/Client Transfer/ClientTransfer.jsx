@@ -16,22 +16,20 @@ const ClientTransfer = ({clientOn, setClientOn}) => {
                 
             <form className='clientTransferContent'>
 
-                    <div className='stockistTransactionOptions'>
+                    <div className='clientTransactionOptions'>
                             <label>
-                                <input type="radio" name="abc" value="distributor" onChange={(e) => clientChangeHandler(e)} />Distributor
+                                <input type="radio" name="abc" value="distributor" onChange={(e) => clientChangeHandler(e)} /><p>Distributor</p>
                             </label>
                             <label>
-                                <input type="radio" name="abc" value="store" onChange={(e) => clientChangeHandler(e)} />Store
+                                <input type="radio" name="abc" value="store" onChange={(e) => clientChangeHandler(e)} /><p>Store</p>
                             </label>
                             <label>
-                                <input type="radio" name="abc" value="customer" onChange={(e) => clientChangeHandler(e)} />Customer
+                                <input type="radio" name="abc" value="customer" onChange={(e) => clientChangeHandler(e)} /><p>Customer</p>
                             </label>
                     </div>
 
-                <div className='formInputContainer'>
-
                     <div className='clientTransferDropDown'>
-                        <p>Clients : </p>
+                        <p>Clients</p>
                         <select>
                             <option>1</option>
                             <option>1</option>
@@ -74,7 +72,7 @@ const ClientTransfer = ({clientOn, setClientOn}) => {
                         <button type='submit'>Commit Transaction</button>
                     </div>
 
-                </div>
+                
                     
             </form>
 

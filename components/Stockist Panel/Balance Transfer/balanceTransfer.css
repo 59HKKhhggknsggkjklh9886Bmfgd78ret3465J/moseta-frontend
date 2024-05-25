@@ -1,22 +1,3 @@
-.balanceTransferDropDown
-{
-    /* border: 1px solid blue; */
-    margin-top: 3%;
-    width: 100%;
-    margin-bottom: 3%;
-}
-.balanceTransferDropDown > select
-{
-    cursor: pointer;
-    width: 50%;
-    height: 2.5rem;
-    border: none;
-    outline: none;
-}
-
-
-
-/* ----------------------------------------------------------------------- */
 .balanceTransferBody
 {
     position: fixed;
@@ -24,12 +5,11 @@
     height: 100%;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.329);
-    z-index: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(10px);
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .balanceTransferBodyOff
@@ -39,7 +19,7 @@
 
 .balanceTransferPopupBody
 {
-    height: 85%;
+    height: 80%;
     /* border: 1px solid green; */
     width: 80%;
     background-color: #FFFBF5;
@@ -48,15 +28,6 @@
     align-items: center;
     flex-direction: column;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.404);
-    padding:  1rem 0;
-}
-
-.stockistTransactionOptions{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-
 }
 
 .balanceTransferBodyClose > p
@@ -76,59 +47,41 @@
 
 .balanceTransferTitle
 {
+    display: flex;
+    align-items: center;
     /* border: 1px red solid; */
-    
+    height: 20%;
     font-size: 2rem;
-    margin-top: 1rem;
 }
+
+
 
 .balanceTransferContent
 {
-    width: fit-content;
-    height: inherit;
-    border:  1px solid red;
-    overflow: scroll;
-}
-
-
-.balanceTransferContent form
-{
-    /* border: 1px solid blue; */
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.formInputContainer{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-.balanceTransferContent form>div
-{
-    margin: 0;
-}
-
-.balanceTransferContent
-{
-    padding: 2rem 5rem; 
-
-    margin-top: 2rem;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 0% 3%;
     /* border: 1px green solid; */
-    /* max-height: calc(90% - 4rem - 3rem - 2rem); */
-    width: calc(90% - 10rem);
+    min-height: calc(10% - 2% - 2%);
+    min-height: calc(80% - 2% - 2%);
+    width: calc(90% - 6%);
     border-radius: 0.6rem;
     background-color: #C3ACD0;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .balanceTransferData
 {
+    font-size: 1.2rem;
     display: flex;
     flex-direction: column;
 }
 .balanceTransferData > input
 {
+    margin-top: 1rem;
     width: 50%;
     outline: none;
     border: none;
@@ -160,7 +113,17 @@
 
 .balanceTransferData
 {
+    /* border: 1px red solid; */
     margin-bottom: 2rem;
+}
+.balanceTransferData > p
+{
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+.balanceTransferData > label
+{
+    font-weight: 500;
 }
 
 .balanceTransferCommitTransaction
@@ -172,12 +135,13 @@
 }
 .balanceTransferCommitTransaction > button
 {
+    font-weight: 400;
     cursor: pointer;
     background-color: #674188;
     color: white;
     border: none;
     outline: none;
-    height: 2rem;
+    height: 3rem;
     padding: 0 1rem;
     border-radius: 0.3rem;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.199);
@@ -193,6 +157,23 @@
 @media (max-width:800px){
     .balanceTransferData > input
     {
-        width: 100%;
+        width: calc(100% - 2rem);
+        outline: none;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-bottom: 2px solid transparent;
+        transition: border-bottom 0.2s ease;
+        background-color: #FFFBF5;
+    }
+
+    .balanceTransferCommitTransaction > button
+    {
+        width: 80%;
+    }
+    .balanceTransferCommitTransaction
+    {
+        /* border: 1px red solid; */
+        display: flex;
+        justify-content: center;
     }
 }
