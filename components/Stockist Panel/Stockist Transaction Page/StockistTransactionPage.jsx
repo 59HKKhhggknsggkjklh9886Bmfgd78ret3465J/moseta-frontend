@@ -7,8 +7,10 @@ import { fetchStock, setProductsInStockSlice } from '../../../src/features/stock
 import { useNavigate } from 'react-router-dom';
 
 const StockistTransactionPage = () => {
+
     const [client, setClient] = useState("");
     const { stock , products} = useSelector((state) => state.stock);
+    const { cart } = useSelector((state) => state.cart);
     const categories = stock.map((i, k) => (i.category));
     
     const [selectedCategory, setSelectedCategory] = useState({});
@@ -17,7 +19,8 @@ const StockistTransactionPage = () => {
     const {isAuth , accountType} = useSelector((state) => state.user);
     const navigate = useNavigate();
 
-    // console.log(selectedCategory)
+    // console.log(cart)
+
     const clientChangeHandler = (e) => {
         setClient(e.target.value);
     };
@@ -73,7 +76,7 @@ const StockistTransactionPage = () => {
 
                 <div className='container2'>
                     <CategoryProducts selectedCategory = {selectedCategory} />
-                    <AddedProducts />
+                    <AddedProducts/>
                 </div>
             </div>
         </div>

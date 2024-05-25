@@ -16,7 +16,7 @@ const MenuOptions = ({menuSelect}) => {
 
   return (
     <div className={menuSelect ? "activeMenuOptions" : "InActiveMenuOptions"}>
-        <Link to={`${accountType == 'admin' ? '/admin' : '/stockist'}`}>Home</Link>
+        <Link className='menuOptionHomeLink' to={`${accountType == 'admin' ? '/admin' : '/stockist'}`}>Home</Link>
         <p onClick={logoutHandler}>Logout</p>
     </div>
   )

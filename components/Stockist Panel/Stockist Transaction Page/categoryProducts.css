@@ -1,7 +1,7 @@
 .categoryProductsBody
 {
     height: max-content;
-    width: max-content;
+    width: 60%;
     background-color: white;
     margin-top: 2rem;
     padding: 0.5rem 1rem;
@@ -22,6 +22,8 @@
 .categoryProductsTableName
 {
     display: flex;
+    justify-content: space-between;
+    margin-right: 3.5rem;
     border-bottom: 1px solid black;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
@@ -53,6 +55,7 @@
     padding: 0.5rem 0.5rem;
     width: 100%;
     background-color: #C3ACD0;
+    justify-content: space-between;
 }
 
 .productDetails > p
@@ -65,7 +68,8 @@
 .categoryProductsCategorySno,
 .productDetailsSno
 {
-    width: 4rem;
+    width: 5%;
+    /* border: 1px solid red; */
     display:flex;
     justify-content:center;
     align-items: center;
@@ -75,7 +79,8 @@
 .categoryProductsCategoryName,
 .productDetailsName
 {
-    width: 20rem;
+    width: 60%;
+    /* border: 1px solid blue; */
     display:flex;
     justify-content:center;
     align-items: center;
@@ -100,6 +105,7 @@
     justify-content:center;
     align-items: center;
     width: 35%;
+    /* border: 1px green solid; */
 }
 
 /* .categoryProductsCategoryQuantity,
@@ -167,6 +173,7 @@
 .productDetailsParent
 {
     display: flex;
+    justify-content: space-between;
 }
 
 

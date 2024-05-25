@@ -2,48 +2,64 @@ import React, { useState } from 'react'
 import "./addedProducts.css"
 import { MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteFromCart, removeFromCart } from '../../../src/features/cartSlice';
-import { increaseQuantityOfProduct } from '../../../src/features/cartSlice';
+import { decreaseProductQuantity, deleteFromCart, increaseProductQuantity } from '../../../src/features/cartSlice';
 
 
 const AddedProducts = () => {
+
     const {cart} = useSelector((state)=>state.cart);
+
+
+    const {stock} = useSelector((state)=>state.stock);
 
     const dispatch = useDispatch();
 
-    const removeData = (e)=>{
-        dispatch(removeFromCart(e))
+    const deleteHandler = (product , key) => {
+        // console.log(product , k)
+        dispatch(deleteFromCart({product , key}))
     }
 
-    const increaseData = (e)=>{
-        dispatch(increaseQuantityOfProduct(e))
+    const increaseQtyHandler = (product , key) => {
+        dispatch(increaseProductQuantity({product, key}))
     }
+
+    const reduceQtyHandler = (product , key) => {
+        dispatch(decreaseProductQuantity({product , key}))
+    }
+
+    const [totalPrice, setTotalPrice] = useState(0);
 
   return (
     <div className='addedProductsBody'>
-        <h2 className='addedProductsTitle'>Added Products</h2>
+        <h2 className='addedProductsTitle'>Added Products {totalPrice}</h2>
 
         <div className='addedProductsDetails'>
             {
-                cart.map((item,key)=>{
-                    return (
-                        <div key={key} className='addedProduct'>
-                            <p className='addedProductSno'>{key+1}.</p>
-                            <p className='addedProductName'>{item.name}</p>
+                cart.map((item,key)=>(                  
+                    
+                    item.products.map((product , k) => (
+                        <div key={k} className='addedProduct'>
+                            
+                            {/* <p className='addedProductSno'>{ k+1 }.</p>x    */}
+                            <p className='addedProductName'>{product.product.name}</p>
+
                             <div className='addedProductQuantity'>
                                 <p className='addedProductQuantityChangeBtn' onClick={()=>{
-                                    removeData(item)
+                                    reduceQtyHandler(product.product , key)
                                 }}>-</p>
-                                <p className='addedProductQuantityNumber'>{item.qnty}</p>
+                                <p className='addedProductQuantityNumber'>{product.quantity}</p>
                                 <p className='addedProductQuantityChangeBtn' onClick={()=>{
-                                    increaseData(item)
+                                    increaseQtyHandler(product.product , key)
                                 }}>+</p>
                             </div>
-                            <p className='addedProductPrice'>{item.qnty*item.price}</p>
-                            <button className='addedProductDelete' onClick={()=>{deleteFromCart(item)}}><MdDelete /></button>
+
+                            <p className='addedProductPrice'>{product.selectedPrice * product.quantity}</p>
+
+                            <button className='addedProductDelete' onClick={() => deleteHandler(product , key)}><MdDelete /></button>
                         </div>
-                    )
-                })
+                    ))
+
+                ))
             }
         </div>
     </div>

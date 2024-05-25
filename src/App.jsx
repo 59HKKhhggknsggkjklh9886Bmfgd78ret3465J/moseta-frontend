@@ -30,7 +30,7 @@ const App = () => {
                 <Route path = '/' element = {<LoginPage/>} />
                 <Route path = '/setup-profile' element = {<ProtectedRoute allowedRoles={["stockist"]}> <SetupProfile/> </ProtectedRoute>} />
                 <Route path = '/stockist' element = {<ProtectedRoute allowedRoles={["stockist"]}> <StockistHome/> </ProtectedRoute> } />
-                <Route path = '/transaction' element = { <ProtectedRoute allowedRoles={["stockist"]}> <StockistTransactionPage/> </ProtectedRoute> } />
+                <Route path = '/transaction' element = { <StockistTransactionPage/> } />
         </Routes>
     </div>
   )
