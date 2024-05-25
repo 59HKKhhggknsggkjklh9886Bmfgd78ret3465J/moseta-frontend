@@ -71,7 +71,7 @@
 
 .clientTransferData
 {
-    font-size:1.5svw;
+    font-size:1.5rem;
     display: flex;
     flex-direction: column;
 }
@@ -193,6 +193,14 @@
 
 
 @media (max-width:800px){
+    .clientTransferPopupBody
+    {
+        width: 100%;
+    }
+    .clientTransferContent
+    {
+        width: 90%;
+    }
     .clientTransferDropDown > select
     {
         width: 100%;

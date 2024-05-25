@@ -74,7 +74,7 @@
 
 .balanceTransferData
 {
-    font-size: 1.2svw;
+    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
 }
@@ -154,6 +154,16 @@
 
 
 @media (max-width:800px){
+    .balanceTransferPopupBody
+    {
+        width: 100%;
+    }
+
+    .balanceTransferContent
+    {
+        width: 90%;
+    }
+
     .balanceTransferData > input
     {
         width: calc(100% - 2rem);
