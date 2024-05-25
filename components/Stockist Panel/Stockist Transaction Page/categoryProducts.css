@@ -1,10 +1,12 @@
 .categoryProductsBody
 {
-    height: max-content;
+    height: 100%;
     width: 60%;
     background-color: white;
     margin-top: 2rem;
     padding: 0.5rem 1rem;
+
+    border: 1px solid blue;
 }
 
 .categoryProductsTitle

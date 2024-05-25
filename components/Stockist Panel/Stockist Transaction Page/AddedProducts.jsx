@@ -10,9 +10,6 @@ const AddedProducts = () => {
     const {cart} = useSelector((state)=>state.cart);
     const {stock} = useSelector((state)=>state.stock);
 
-
-    const {stock} = useSelector((state)=>state.stock);
-
     const dispatch = useDispatch();
 
     const deleteHandler = (product , key) => {
