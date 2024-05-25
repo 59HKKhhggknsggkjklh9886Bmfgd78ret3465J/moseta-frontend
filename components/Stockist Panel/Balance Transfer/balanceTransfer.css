@@ -60,11 +60,10 @@
 {
     margin-top: 2%;
     margin-bottom: 2%;
-    padding: 0% 3%;
+    padding: 2% 3%;
     /* border: 1px green solid; */
-    min-height: calc(10% - 2% - 2%);
     min-height: calc(80% - 2% - 2%);
-    width: calc(90% - 6%);
+    width: calc(90% - 6% - 4%);
     border-radius: 0.6rem;
     background-color: #C3ACD0;
     overflow-y: scroll;
@@ -75,7 +74,7 @@
 
 .balanceTransferData
 {
-    font-size: 1.2rem;
+    font-size: 1.2svw;
     display: flex;
     flex-direction: column;
 }

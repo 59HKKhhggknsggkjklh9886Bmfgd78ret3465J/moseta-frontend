@@ -1,14 +1,17 @@
 .setupProfileBody
 {
-    height: 100svh;
+    height: calc(100svh);
+    margin-bottom: 0;
     width: 100%;
     background-color: var(--background-color);
 }
 
 .setupProfileFormParent
 {
-    /* background-color: green; */
+
+    background-color: #F7EFE5;
     height: calc(100% - 4rem);
     display: flex;
     justify-content: center;
+    align-items: center;
 }

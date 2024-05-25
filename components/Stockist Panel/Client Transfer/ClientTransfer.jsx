@@ -29,7 +29,7 @@ const ClientTransfer = ({clientOn, setClientOn}) => {
                     </div>
 
                     <div className='clientTransferDropDown'>
-                        <p>Clients</p>
+                        <p className='clientTransferLabel'>Clients</p>
                         <select>
                             <option>1</option>
                             <option>1</option>
@@ -61,7 +61,7 @@ const ClientTransfer = ({clientOn, setClientOn}) => {
                     </div>
 
                     <div className='clientTransferData'>
-                        <p>Proof</p>
+                        <p className='clientTransferLabel'>Proof</p>
                         <label className="clientTransferCustomLabel">
                             Upload Your File
                             <input type="file"/>
