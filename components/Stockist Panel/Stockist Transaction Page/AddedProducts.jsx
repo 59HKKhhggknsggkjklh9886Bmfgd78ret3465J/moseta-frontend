@@ -108,14 +108,18 @@ const AddedProducts = ({selectedClient}) => {
                     item.products.map((product, k) => (
                         <div key={k} className='addedProduct'>
                             <p className='addedProductName'>{product.product.name}</p>
-                            <div className='addedProductQuantity'>
-                                <p className='addedProductQuantityChangeBtn' onClick={() => reduceQtyHandler(product.product, key)}>-</p>
-                                <p className='addedProductQuantityNumber'>{product.quantity}</p>
-                                <p className='addedProductQuantityChangeBtn' onClick={() => increaseQtyHandler(product.product, key)}>+</p>
+
+                            <div className='addedProductDetails'>
+
+                                <div className='addedProductQuantity'>
+                                    <p className='addedProductQuantityChangeBtn' onClick={() => reduceQtyHandler(product.product, key)}>-</p>
+                                    <p className='addedProductQuantityNumber'>{product.quantity}</p>
+                                    <p className='addedProductQuantityChangeBtn' onClick={() => increaseQtyHandler(product.product, key)}>+</p>
+                                </div>
+                                <p className='addedProductPrice'>₹{(product.priceAfterDiscount * product.quantity).toFixed(2)}</p>
+                                <p className='addedProductDiscount'>-{product.discount}%</p>
+                                <button className='addedProductDelete' onClick={() => deleteHandler(product, key)}><MdDelete /></button>
                             </div>
-                            <p className='addedProductPrice'>₹{(product.priceAfterDiscount * product.quantity).toFixed(2)}</p>
-                            <p className='addedProductDiscount'>-{product.discount}%</p>
-                            <button className='addedProductDelete' onClick={() => deleteHandler(product, key)}><MdDelete /></button>
                         </div>
                     ))
                 ))}

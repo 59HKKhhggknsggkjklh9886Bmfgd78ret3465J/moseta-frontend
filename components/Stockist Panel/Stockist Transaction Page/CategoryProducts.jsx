@@ -67,13 +67,13 @@ const CategoryProducts = ({ selectedCategory }) => {
         <div className='categoryProductsDetails'>
           {products.map((ele, key) => {
             return (
-              <div key={key} className='productDetailsParent'>
-                <div className='productDetails'>
-                  <p className='productDetailsSno'>{key + 1}.</p>
-                  <p className='productDetailsName'>{ele.product.name}</p>
+              <div key={key} className='categoryProductDetailsParent'>
+                <div className='categoryProductDetails'>
+                  <p className='categoryProductDetailsSno'>{key + 1}.</p>
+                  <p className='categoryProductDetailsName'>{ele.product.name}</p>
 
                   <select
-                    className='productDetailsPriceType'
+                    className='categoryProductDetailsPriceType'
                     value={selectedPrice}
                     onChange={(e) => priceChangeHandler(e)}
                   >
@@ -84,7 +84,7 @@ const CategoryProducts = ({ selectedCategory }) => {
                     <option value={`mcp:${ele.product.mcpWithGst}`}>MCP Price :  ₹{ele.product.mcpWithGst}</option>
                   </select>
 
-                  <p className='discountInput'>
+                  <p className='categoryDiscountInput'>
                     <input
                       placeholder='- %'
                       required
@@ -105,7 +105,7 @@ const CategoryProducts = ({ selectedCategory }) => {
                   </p>
                 </div>
 
-                <div className='productDetailsAddBtn' onClick={() => addData(ele, discounts[key], key)}>
+                <div className='categoryProductDetailsAddBtn' onClick={() => addData(ele, discounts[key], key)}>
                   <button><IoIosAdd /></button>
                 </div>
               </div>
