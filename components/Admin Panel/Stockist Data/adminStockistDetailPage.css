@@ -203,7 +203,7 @@
 
     .adminStockistDetailPageBtns
     {
-        border: 1px solid green;
+        /* border: 1px solid green; */
         display: flex;
         gap: 1rem;
     }

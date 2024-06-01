@@ -80,7 +80,7 @@ const AdminStockistDetailPage = () => {
                 </div>
                 <div>
                     <h1>Address</h1>
-                    <h2 className='adminStockistAddress'>{stockist?.profile?.address}</h2>
+                    <h2>{stockist?.profile?.address}</h2>
                 </div>
                 <div>
                     <h1>Contact Number</h1>

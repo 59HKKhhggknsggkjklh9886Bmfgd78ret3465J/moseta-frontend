@@ -51,7 +51,7 @@ const StokistProfile = () => {
                 </div>
                 <div>
                     <h1>Address</h1>
-                    <h2 className='stockistAddress'>{user?.profile?.address}</h2>
+                    <h2>{user?.profile?.address}</h2>
                 </div>
                 <div>
                     <h1>Contact Number</h1>
