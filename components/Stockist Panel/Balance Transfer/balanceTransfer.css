@@ -2,7 +2,8 @@
 {
     position: fixed;
     top: 0;
-    height: 100%;
+    left: 0;
+    height: 100svh;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.329);
     display: flex;
@@ -10,23 +11,27 @@
     align-items: center;
     backdrop-filter: blur(10px);
     /* overflow: scroll; */
+    z-index: 1;
 }
 
 .balanceTransferBodyOff
 {
     display: none;
+    position: absolute;
+    visibility: hidden;
+    margin-top: -1000rem;
 }
 
 .balanceTransferPopupBody
 {
     height: 80%;
+    
     /* border: 1px solid green; */
     width: 80%;
     background-color: #FFFBF5;
     position: relative;
     display: flex;
     align-items: center;
-    flex-direction: column;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.404);
 }
 
@@ -43,15 +48,25 @@
     align-items: center;
     position: absolute;
     right: 0;
+    top: 0;
+}
+.balanceTransferBodyClose > p:hover
+{
+    transform: rotateY('180deg');
 }
 
 .balanceTransferTitle
 {
     display: flex;
+
     align-items: center;
     /* border: 1px red solid; */
-    height: 20%;
+    min-height: 100%;
+    justify-content: center;
+    background-color: #674188;
     font-size: 2rem;
+    color: white;
+    width: 100%;
 }
 
 
@@ -62,33 +77,50 @@
     margin-bottom: 2%;
     padding: 2% 3%;
     /* border: 1px green solid; */
-    min-height: calc(80% - 2% - 2%);
-    width: calc(90% - 6% - 4%);
-    border-radius: 0.6rem;
-    background-color: #C3ACD0;
-    overflow-y: scroll;
+    background-color: white;
+    height: calc(100% - 8%);
+    width: calc(100% - 6%);
+    background-color: transparent;
     display: flex;
+    overflow: scroll;
     flex-direction: column;
     justify-content: space-around;
 }
 
+.balanceTransferContentChild
+{
+    margin-top: 2%;
+    height: max-content;
+    width: 100%;
+    /* border: 1px green solid; */
+    /* background-color: green; */
+}
+
 .balanceTransferData
 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     display: flex;
     flex-direction: column;
 }
+
+.balanceTransferLabel
+{
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
 .balanceTransferData > input
 {
-    margin-top: 1rem;
-    width: 50%;
+    font-size: 1rem;
+    /* margin-top: 1rem; */
+    width: 60%;
     outline: none;
     border: none;
-    padding: 0.5rem 1rem;
+    height: 2rem;
+    padding: 1.5rem 1rem;
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.2s ease;
-    background-color: #FFFBF5;
-    border-radius: 0.6rem;
+    background-color: #F7EFE5;
 }
 .balanceTransferData > input:focus,
 .balanceTransferData > input:valid
@@ -118,17 +150,13 @@
 }
 .balanceTransferData > p
 {
-    margin-bottom: 1rem;
-    font-weight: 500;
-}
-.balanceTransferData > label
-{
     font-weight: 500;
 }
 
 .balanceTransferCommitTransaction
 {
     width: 100%;
+    height: 20%;
     /* border: 1px solid red; */
     display: flex;
     justify-content: end;
@@ -142,6 +170,7 @@
     border: none;
     outline: none;
     height: 3rem;
+    margin-top: 0%;
     padding: 0 1rem;
     border-radius: 0.3rem;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.199);
@@ -154,69 +183,117 @@
 }
 
 
-@media (max-width:800px){
-    input
+
+@media (max-width:1050px)
+{
+    .balanceTransferBody
     {
-        height: 10vw;
-        border-radius: 0.6rem;
-        font-size: 1.1rem;
-    }
-    .balanceTransferBodyClose p
-    {
-        width: 12%;
-        height: 8%;
-        font-size: 2.5rem;
-        /* all: unset; */
-        /* background-color: yellow; */
-        border: 1px green solid;
+        min-width: max-content;
+        overflow: scroll;
+        /* position: fixed; */
     }
     .balanceTransferPopupBody
     {
-        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        /* border: 1px solid blue; */
     }
-
+    
     .balanceTransferContent
     {
-        width: 90%;
+        all: unset;
+        flex-direction: column;
+        /* border: 10px solid green; */
+        min-width: 70%;
+        height: 100%;
+        overflow: scroll;
+        display: flex;
+        justify-content: start;
+        padding-right: 5%;
+        margin-top: 1rem;
     }
 
     .balanceTransferData > input
     {
-        width: calc(100% - 2rem);
-        outline: none;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-bottom: 5px solid transparent;
-        transition: border-bottom 0.2s ease;
-        background-color: #FFFBF5;
+        width: 100%;
     }
-    .balanceTransferData > input:focus,
-    .balanceTransferData > input:valid
-    {
-        border-bottom: 5px solid #674188;
-    }
-
-
-    .balanceTransferCommitTransaction > button
+    
+    .balanceTransferTitle
     {
         width: 100%;
-        height: 100%;
+        min-height: 10rem;
     }
+}
+
+
+@media (max-width:620px)
+{
+    .balanceTransferPopupBody
+    {
+        width: 99%;
+        /* border: 1px blue solid; */
+    }
+
+    .balanceTransferContent
+    {
+        width: calc(100% - 1rem);
+        display: flex;
+        padding-right: 0%;
+        justify-content: start;
+    }
+
+    .balanceTransferInnerForm
+    {
+        width: 100%;
+        /* border: 1px red solid; */
+        display: flex;
+        /* justify-content: center; */
+    }
+
+    .balanceTransferFormRow
+    {
+        /* border: 1px solid blue; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .balanceTransferData > input
+    {
+        /* border: 1px solid green; */
+        padding: 0.5 1rem;
+        width: 90%;
+        font-size: 1rem;
+    }
+    .balanceTransferCredentialTitle
+    {
+        /* border: 1px solid red; */
+        
+        width: calc(90% + 2rem);
+    }
+
+    .balanceTransferPasswordRow
+    {
+        /* border: 1px green solid; */
+        width: calc(90% + 2rem);
+    }
+
+    .balanceTransferPasswordInput
+    {
+        width: calc(100% - 3rem);
+    }
+
     .balanceTransferCommitTransaction
     {
-        border: 1px red solid;
+        /* border: 1px solid green; */
         display: flex;
-        height: 15vw;
         justify-content: center;
     }
-
     .balanceTransferCommitTransaction > button
     {
-        font-size: 1.5rem;
-    }
-
-    .balanceTransferCustomLabel
-    {
-        margin-bottom: 5vw;
+        font-size: 1rem;
+        width: 80%;
+        /* border: 1px solid blue; */
     }
 }

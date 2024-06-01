@@ -2,30 +2,36 @@
 {
     position: fixed;
     top: 0;
-    height: 100%;
+    left: 0;
+    height: 100svh;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.329);
     display: flex;
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(10px);
+    /* overflow: scroll; */
+    z-index: 1;
 }
 
 .clientTransferBodyOff
 {
     display: none;
+    position: absolute;
+    visibility: hidden;
+    margin-top: -1000rem;
 }
 
 .clientTransferPopupBody
 {
     height: 80%;
+    
     /* border: 1px solid green; */
     width: 80%;
     background-color: #FFFBF5;
     position: relative;
     display: flex;
     align-items: center;
-    flex-direction: column;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.404);
 }
 
@@ -42,59 +48,93 @@
     align-items: center;
     position: absolute;
     right: 0;
+    top: 0;
+}
+.clientTransferBodyClose > p:hover
+{
+    transform: rotateY('180deg');
 }
 
 .clientTransferTitle
 {
     display: flex;
+
     align-items: center;
     /* border: 1px red solid; */
-    height: 20%;
+    min-height: 100%;
+    justify-content: center;
+    background-color: #674188;
     font-size: 2rem;
+    color: white;
+    width: 100%;
 }
+
 
 
 .clientTransferContent
 {
+    margin-top: 2%;
     margin-bottom: 2%;
     padding: 2% 3%;
     /* border: 1px green solid; */
-    height: calc(80% - 2% - 4%);
-    width: calc(90% - 6%);
-    border-radius: 0.6rem;
-    background-color: #C3ACD0;
-    overflow-y: scroll;
+    background-color: white;
+    height: calc(100% - 8%);
+    width: calc(100% - 6%);
+    background-color: transparent;
     display: flex;
+    overflow: scroll;
     flex-direction: column;
     justify-content: space-around;
 }
 
+.clientTransferContentChild
+{
+    margin-top: 2%;
+    height: max-content;
+    width: 100%;
+    /* border: 1px green solid; */
+    /* background-color: green; */
+}
+
 .clientTransferData
 {
-    font-size:1.5rem;
+    font-size: 1.2rem;
     display: flex;
     flex-direction: column;
 }
-.clientTransferData > input
-{
-    margin-bottom: 0.5rem;
-    width: calc(50% - 2rem);
-    outline: none;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.2s ease;
-    background-color: #FFFBF5;
-}
-
 
 .clientTransferLabel
 {
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
 
+.clientSelectInput
+{
+    height: 3rem;
+    width: 20rem;
+    border: none;
+    outline: none;
+    background-color: #F7EFE5;
+    padding: 0 1rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.clientTransferData > input
+{
+    font-size: 1rem;
+    /* margin-top: 1rem; */
+    width: 60%;
+    outline: none;
+    border: none;
+    height: 2rem;
+    padding: 1.5rem 1rem;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s ease;
+    background-color: #F7EFE5;
+}
 .clientTransferData > input:focus,
 .clientTransferData > input:valid
 {
@@ -119,14 +159,9 @@
 .clientTransferData
 {
     /* border: 1px red solid; */
-    /* margin-bottom: 2rem; */
+    margin-bottom: 2rem;
 }
 .clientTransferData > p
-{
-    /* margin-bottom: 1rem; */
-    font-weight: 500;
-}
-.clientTransferData > label
 {
     font-weight: 500;
 }
@@ -134,6 +169,7 @@
 .clientTransferCommitTransaction
 {
     width: 100%;
+    height: 20%;
     /* border: 1px solid red; */
     display: flex;
     justify-content: end;
@@ -147,6 +183,7 @@
     border: none;
     outline: none;
     height: 3rem;
+    margin-top: 0%;
     padding: 0 1rem;
     border-radius: 0.3rem;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.199);
@@ -158,96 +195,137 @@
     color: black;
 }
 
-.clientTransactionOptions
-{
-    font-size: 1.1rem;
-    /* border: 1px green solid; */
-    display: flex;
-    justify-content: space-around;
-}
-
-.clientTransactionOptions > label
-{
-    display: flex;
-    gap: 0.2rem;
-    cursor: pointer;
-}
-.clientTransferDropDownOption:hover
-{
-    background-color: green;
-}
-.clientTransferDropDown > select > option:hover
-{
-    background-color: #674188;
-}
-.clientTransferDropDown > select
-{
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    height: 2.5rem;
-    width: 50%;
-    padding: 0 1rem;
-}
 
 
-
-@media (max-width:800px){
-    input
+@media (max-width:1050px)
+{
+    .clientTransferBody
     {
-        height: 10vw;
-        border-radius: 0.6rem;
-        font-size: 1.1rem;
-    }
-    .clientTransferBodyClose p
-    {
-        width: 12%;
-        height: 8%;
-        font-size: 2.5rem;
-        /* all: unset; */
-        /* background-color: yellow; */
-        border: 1px green solid;
+        min-width: max-content;
+        overflow: scroll;
+        /* position: fixed; */
     }
     .clientTransferPopupBody
     {
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        /* border: 1px solid blue; */
+    }
+    
+    .clientTransferContent
+    {
+        all: unset;
+        flex-direction: column;
+        /* border: 10px solid green; */
+        min-width: 70%;
+        height: 100%;
+        overflow: scroll;
+        display: flex;
+        justify-content: start;
+        padding-right: 5%;
+        margin-top: 1rem;
+    }
+
+    .clientTransferData > input
+    {
         width: 100%;
+    }
+    
+    .clientTransferTitle
+    {
+        width: 100%;
+        min-height: 10rem;
+    }
+}
+
+
+@media (max-width:620px)
+{
+    .clientTransferPopupBody
+    {
+        width: 99%;
+        /* border: 1px blue solid; */
     }
 
     .clientTransferContent
     {
+        width: calc(100% - 1rem);
+        display: flex;
+        padding-right: 0%;
+        justify-content: start;
+    }
+
+    .clientTransferInnerForm
+    {
+        width: 100%;
+        /* border: 1px red solid; */
+        display: flex;
+        /* justify-content: center; */
+    }
+
+    .clientTransferFormRow
+    {
+        /* border: 1px solid blue; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .clientSelectInput
+    {
+        padding: 0 1rem;
         width: 90%;
     }
 
     .clientTransferData > input
     {
-        width: calc(100% - 2rem);
-        outline: none;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-bottom: 5px solid transparent;
-        transition: border-bottom 0.2s ease;
-        background-color: #FFFBF5;
+        /* border: 1px solid green; */
+        padding: 0.5 1rem;
+        width: 90%;
+        font-size: 1rem;
     }
-    .clientTransferData > input:focus,
-    .clientTransferData > input:valid
+    .clientTransferCredentialTitle
     {
-        border-bottom: 5px solid #674188;
+        /* border: 1px solid red; */
+        
+        width: calc(90% + 2rem);
     }
 
-    .clientTransferCommitTransaction > button
+    .clientTransferPasswordRow
     {
-        width: 80%;
+        /* border: 1px green solid; */
+        width: calc(90% + 2rem);
     }
+
+    .clientTransferPasswordInput
+    {
+        width: calc(100% - 3rem);
+    }
+
     .clientTransferCommitTransaction
     {
-        /* border: 1px red solid; */
+        /* border: 1px solid green; */
         display: flex;
         justify-content: center;
     }
-
     .clientTransferCommitTransaction > button
     {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        width: 80%;
+        /* border: 1px solid blue; */
+    }
+}
+
+
+@media (max-width:450px)
+{
+    .stockistTransactionOptions
+    {
+        display: flex;
+        font-size: 1rem;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
     }
 }

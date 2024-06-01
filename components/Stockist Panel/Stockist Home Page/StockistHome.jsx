@@ -5,6 +5,7 @@ import StokistProfile from './StokistProfile'
 
 const StockistHome = () => {
 
+  
   return (
     <div className='transactionPageBody'>
         

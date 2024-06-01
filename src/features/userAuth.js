@@ -11,6 +11,7 @@ const initialState = {
     accountType: null,
     notifications : [],
     profileSetup: true,
+    clients: [],
 }
 
 
@@ -32,6 +33,7 @@ const userAuth = createSlice({
         state.isAuth = true,
         state.accountType = action.payload.accountType   
         state.profileSetup = action.payload?.profileSetup 
+        state.clients = action.payload?.clients
     },
 
     loginFail: (state,action) => {
@@ -53,6 +55,7 @@ const userAuth = createSlice({
         state.isAuth = true,
         state.accountType = action.payload.accountType    
         state.profileSetup = action.payload?.profileSetup 
+        state.clients = action.payload?.clients
     },
 
     loadUserFail: (state,action) => {
@@ -150,7 +153,8 @@ export const login = (formData , navigate , userType) => async (dispatch) => {
         toast.success("Logged in successfully")
     }
     catch(error){
-        console.log(error);
+        // console.log(error);
+        toast.error(error?.response?.data?.message)
         dispatch(loginFail());
     }
 
@@ -180,7 +184,7 @@ export const loadUser = () => async (dispatch) => {
 
 
 // logout
-export const logout = () => async (dispatch) => {
+export const logout = (navigate) => async (dispatch) => {
 
     dispatch(logoutStart());
 
@@ -190,9 +194,10 @@ export const logout = () => async (dispatch) => {
 
         dispatch(logoutSuccess());
         toast.success("Logout Successfully")
+        navigate("/");
     }
     catch(error){
-        console.log(error);
+        // console.log(error);
         dispatch(logoutFail());
         toast.error("Logout Fail")
     }
@@ -214,11 +219,13 @@ export const getAllNotifications = () => async (dispatch) => {
         dispatch(notificationsSuccess(response.data.notifications));
     }
     catch(error){
-        console.log(error);
+        // console.log(error);
         dispatch(notificationsFail());
     }
 
 }
+
+
 
 
 

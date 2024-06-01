@@ -5,10 +5,11 @@ import { loadUser } from "./userAuth";
 
 const initialState = {
     stockists: [],
+    transactions: [],
+    rejectedTransactions:[],
     loading: false,
     error: null,
     stockist: {},
-
 }
 
 
@@ -44,7 +45,8 @@ const stockistsSlice = createSlice({
     singleStockistSuccess: (state,action) => {
         state.loading = false,
         state.stockist = action.payload
-        state.stockist
+        state.transactions = action.payload?.transactions
+        state.rejectedTransactions = action.payload?.rejectedTransactions
     },
 
     singleStockistFail: (state,action) => {
@@ -101,6 +103,36 @@ const stockistsSlice = createSlice({
         state.error = action.payload
     },
 
+
+    // update stockist Profile
+    createClientStart: (state) => {
+        state.loading = true    
+    },
+
+    createClientSuccess: (state,action) => {
+        state.loading = false
+    },
+
+    createClientFail: (state,action) => {
+        state.loading = false,
+        state.error = action.payload
+    },
+
+    // fetch stockist transactions
+    fetchTransactionsStart: (state) => {
+        state.loading = true    
+    },
+
+    fetchTransactionsSuccess: (state,action) => {
+        state.loading = false,
+        state.transactions = action.payload
+    },
+
+    fetchTransactionsFail: (state,action) => {
+        state.loading = false,
+        state.error = action.payload
+    },
+
     }
 })
 
@@ -120,7 +152,13 @@ export const {
     deleteStockistFail,
     updateStockistProfileStart,
     updateStockistProfileSuccess,
-    updateStockistProfileFail
+    updateStockistProfileFail,
+    createClientStart,
+    createClientSuccess,
+    createClientFail,
+    fetchTransactionsStart,
+    fetchTransactionsSuccess,
+    fetchTransactionsFail,
 
 } = stockistsSlice.actions;
 
@@ -149,7 +187,7 @@ export const getAllStockists = () => async (dispatch) => {
         dispatch(allStockistSuccess(response.data.stockists));
     }
     catch(error){
-        console.log(error)
+        //console.log(error)
         dispatch(allStockistFail())
     }
 
@@ -168,7 +206,7 @@ export const getSingleStockists = (id) => async (dispatch) => {
         dispatch(singleStockistSuccess(response.data.stockist));
     }
     catch(error){
-        console.log(error)
+        // console.log(error)
         dispatch(singleStockistFail())
     }
 
@@ -177,7 +215,7 @@ export const getSingleStockists = (id) => async (dispatch) => {
 
 
 // create a stockist
-export const createStockist = (formData,navigate) => async (dispatch) => {
+export const  createStockist = (formData,setCreateStockistOn,setFormData) => async (dispatch) => {
 
     dispatch(createStockistStart());
 
@@ -186,11 +224,20 @@ export const createStockist = (formData,navigate) => async (dispatch) => {
 
         dispatch(createStockistSuccess());
         toast.success(response.data.message);
-        navigate(-1);
+        setCreateStockistOn(false);
+        setFormData({
+            name: '',
+            username: '',
+            password: '',
+            special: false,
+            expectedProfit: ''
+        })
+        dispatch(getAllStockists());
     }
     catch(error){
-        console.log(error)
-        dispatch(createStockistFail())
+        // console.log(error)
+        dispatch(createStockistFail(error?.response?.data?.message))
+        toast(error?.response?.data?.message);
     }
 
 }
@@ -212,7 +259,7 @@ export const deleteStockist = (id,navigate) => async (dispatch) => {
         navigate("/admin");
     }
     catch(error){
-        console.log(error)
+        // console.log(error)
         dispatch(deleteStockistFail())
     }
 
@@ -226,17 +273,15 @@ export const updateProfileByStockist = (formData,profileSetup) => async (dispatc
     dispatch(updateStockistProfileStart());
 
     try{
-        
-        const link = profileSetup ? "update-profile" : "setup-profile"
 
         const response = await apiConnector(
             `${profileSetup ? "PUT" : "POST"}`,
-            apiUrl + link,
+            apiUrl + "update-profile",
             formData,
             { 'Content-Type': 'multipart/form-data' } // Pass headers object with Content-Type
         );
 
-        // console.log(response)
+        //console.log(response)
 
         dispatch(updateStockistProfileSuccess());
 
@@ -246,9 +291,53 @@ export const updateProfileByStockist = (formData,profileSetup) => async (dispatc
 
     }
     catch(error){
-        console.log(error);
+        //console.log(error);
         dispatch(updateStockistProfileFail())
         // toast.error(error.response.data.message);
+    }
+
+}
+
+
+
+
+// create Client
+export const createClient = (formData,navigate) => async(dispatch) => {
+
+    dispatch(createClientStart());
+
+    try{
+        const response = await apiConnector("POST" , apiUrl + "create-client" , formData);
+
+        dispatch(createClientSuccess());
+        toast.success(response?.data?.message);
+        navigate(-1)
+    }
+    catch(error){
+        //console.log(error)
+        dispatch(createClientSuccess(error?.response?.data?.message));
+        toast.error(error?.response?.data?.message);
+    }
+}
+
+// update Client
+// Delete CLient
+
+
+
+// fetch stockist transactions
+export const getTransactions = ({stockistId}) => async (dispatch) => {
+
+    dispatch(fetchTransactionsStart());
+    
+    try{
+        const resposne = await apiConnector("POST" , apiUrl + "get-stockist-transactions" , {stockistId});
+      
+        dispatch(fetchTransactionsSuccess(resposne?.data?.transactions))
+    }
+    catch(error){
+        console.log(error)
+        dispatch(fetchTransactionsFail(error?.response?.data?.message))
     }
 
 }

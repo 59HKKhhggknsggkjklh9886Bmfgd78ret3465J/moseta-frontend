@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     cart: [],
     totalPrice: 0,
+    
 }
 
 const cartSlice = createSlice({
@@ -88,19 +89,27 @@ const cartSlice = createSlice({
 
             state.totalPrice = calculateTotalPrice(state.cart);
         },
+
+        // set cart empty
+        emptyCart: (state , action) => {
+            state.cart = []
+            state.totalPrice = 0;
+        }
     }
 });
 
 
 
 // Helper function to calculate total price
-const calculateTotalPrice = (cart) => {
+export const calculateTotalPrice = (cart) => {
+    
     let totalPrice = 0;
     cart.forEach(category => {
         category.products.forEach(product => {
             totalPrice += product.priceAfterDiscount * product.quantity;
         });
     });
+
     return totalPrice;
 };
 
@@ -110,6 +119,7 @@ export const {
     addToCart, 
     deleteFromCart, 
     increaseProductQuantity, 
-    decreaseProductQuantity 
+    decreaseProductQuantity ,
+    emptyCart
     } = cartSlice.actions;
 export default cartSlice.reducer;

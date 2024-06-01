@@ -8,6 +8,7 @@ const SetupProfile = () => {
 
   const {loading} = useSelector((state) => state.stockist);
 
+  
   return (
     <div className = "setupProfileBody">
         

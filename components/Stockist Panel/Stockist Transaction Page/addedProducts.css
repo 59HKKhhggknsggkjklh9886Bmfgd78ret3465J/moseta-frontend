@@ -199,7 +199,6 @@
     justify-content: start;
     align-items: center;
     gap: 1rem;
-    margin-top: 1rem;  
 }
 
 .additionalCharges > label{
@@ -214,4 +213,27 @@
 
     padding: 0 1rem;
 
+}
+
+.totalPriceDiv{
+    display: flex;
+    justify-content: space-between;
+    color: green;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.uploadProofBtn{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: #674188;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+}
+
+.uploadProofBtn p {
+    /* border: 1px solid white; */
+    margin: 0 auto;
 }

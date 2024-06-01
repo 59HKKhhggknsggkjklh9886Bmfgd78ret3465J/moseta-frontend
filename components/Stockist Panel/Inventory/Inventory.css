@@ -1,0 +1,127 @@
+.stockistInventoryBody
+{
+    /* background-color: green; */
+    height: calc(100svh - 4rem);
+    display: flex;
+    justify-content: center;
+    overflow-x: scroll;
+}
+
+.stockistInventoryTitle
+{
+    /* border: 1px red solid; */
+}
+
+.stockistInventoryContainer
+{
+    display: flex;
+    gap: 0rem;
+    flex-direction: column;
+    height: calc(100% - 2rem - 2%);
+    width: 50rem;
+    margin-top: 2%;
+    /* border: 1px blue solid; */
+    /* background-color: blue; */
+}
+
+.stockistInventoryCategoryContainer
+{
+    /* border: 1px green solid; */
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-radius: 0.3rem;
+    background-color: #cdcef3;
+}
+
+.stockistInventoryCategory
+{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.stockInventoryCategoryTitle
+{
+    font-weight: 700;
+    width: 15%;
+
+    /* border: 1px solid blue; */
+}
+
+.stockInventoryCategoryName
+{
+    /* border: 1px green solid; */
+    width: 85%;
+}
+
+.stockistInventoryStockContainer
+{
+    margin-top: 3%;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stockistInventoryProductList
+{
+    /* border: 1px solid red; */
+    gap: 0.5rem;
+    padding: 1% 0%;
+    align-items: center;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stockistInventoryProductName
+{
+    margin-left: 2%;
+    width: calc(100% - 2% );
+}
+
+.stockistInventoryProductQuantity
+{
+    margin-right: 2%;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 0.3rem;
+    background-color: #674188;
+}
+
+
+
+
+
+/* mobile applicaitons */
+
+@media (max-width:620px)
+{
+    .stockInventoryCategoryTitle
+    {
+        width: 20%;
+    }
+    .stockInventoryCategoryName
+    {
+        width: 80%;
+    }
+}
+
+@media (max-width : 500px)
+{
+    .stockistInventoryCategory
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stockInventoryCategoryName
+    {
+        width: 100%;
+    }
+}

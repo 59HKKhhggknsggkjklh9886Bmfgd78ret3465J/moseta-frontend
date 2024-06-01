@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateProfileByStockist } from '../../../src/features/stockistsSlice';
 
 const SetupProfileForm = () => {
-    const { user, accountType } = useSelector((state) => state.user);
+    
+    const { user } = useSelector((state) => state.user);
+
     const dispatch = useDispatch();
 
     const [profilePic, setProfilePic] = useState(user?.profile?.image?.secureUrl || null);
@@ -43,7 +45,7 @@ const SetupProfileForm = () => {
             data.append('profilePic', file);
         }
 
-        dispatch(updateProfileByStockist(data, accountType));
+        dispatch(updateProfileByStockist(data, user.profileSetup));
     }
 
     return (
@@ -93,8 +95,8 @@ const SetupProfileForm = () => {
                             required="required"
                             spellCheck="false"
                             type="text"
+                            onChange={handleInputChange}
                             value={formData.gstNo}
-                            readOnly
                         />
                     </div>
                     <div>
@@ -136,7 +138,9 @@ const SetupProfileForm = () => {
                         onChange={handleInputChange}
                     />
                 </div>
-                <button className='setupBtn' type="submit">Save Changes</button>
+                <div className='setupBtnBody'>
+                    <button className='setupBtn' type="submit">Save Changes</button>
+                </div>
             </form>
         </div>
     );

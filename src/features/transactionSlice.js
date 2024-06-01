@@ -3,12 +3,12 @@ import { apiConnector } from "./apiconnector";
 import toast from "react-hot-toast";
 import axios from "axios";
 
+
 const initialState = {
 
     loading: false,
     success: null,
-    error: null
-
+    error: null,
 }
 
 
@@ -48,6 +48,22 @@ const transactionSlice = createSlice({
             state.loading = false,
             state.error = action.payload
         },
+
+
+        // fetch transactions
+        fetchTransactionsStart: (state,action) => {
+            state.loading = true
+        },
+
+        fetchTransactionsSuccess: (state,action) => {
+            state.loading = false,
+            state.transactions = action.payload
+        },
+
+        fetchTransactionsFail: (state,action) => {
+            state.loading = false,
+            state.error = action.payload
+        },
     }
 })
 
@@ -58,7 +74,10 @@ export const {
     commitTransactionFail,
     fetchProofStart,
     fetchProofSuccess,
-    fetchProofFail
+    fetchProofFail,
+    fetchTransactionsStart,
+    fetchTransactionsSuccess,
+    fetchTransactionsFail
 
 } = transactionSlice.actions;
 
@@ -77,8 +96,8 @@ const apiUrl = "http://localhost:4001/api/v1/";
 
 
 
-// comming a transaction
-export const commitAdminTransaction = (formData , navigate) => async(dispatch) => {
+// commiting a transaction
+export const commitAdminTransaction = (formData , navigate , setAdminBalanceTransfer) => async(dispatch) => {
 
 
     dispatch(commitTransactionStart());
@@ -87,7 +106,7 @@ export const commitAdminTransaction = (formData , navigate) => async(dispatch) =
         const link = 
         formData.type === "Balance Transfer" ? "commit-bl-transaction-admin" : 
         formData.type === "Stock Transfer" ? "commit-st-transaction-admin" : null ;
-
+        
         const response = await apiConnector(
             "POST",
             apiUrl + link,
@@ -95,24 +114,32 @@ export const commitAdminTransaction = (formData , navigate) => async(dispatch) =
             { 'Content-Type': 'multipart/form-data' } // Pass headers object with Content-Type
         );
           
-        console.log(response);
+        // console.log(response);
 
         dispatch(commitTransactionSuccess(response.data.message));
-        navigate(-1);
-        toast.success(response.data.message);
+        toast.success(response?.data?.message);
+  
+ 
+
+        if(setAdminBalanceTransfer){
+            setAdminBalanceTransfer(false);
+        }
+        else{
+            navigate(-1);
+        }
     }
     catch(error){
-        console.log(error);
-        dispatch(commitTransactionFail())
-        navigate(-1);
-        // toast.error(error.response.data.message)
+        // console.log(error);
+        dispatch(commitTransactionFail(error?.response?.data?.message))
+        toast.error(error?.response?.data?.message)
     }
 
 }
 
 
 
-export const commitStockistTransaction = (formData , navigate) => async(dispatch) => {  
+
+export const commitStockistTransaction = (formData,navigate,setOn) => async(dispatch) => {  
 
 
     dispatch(commitTransactionStart());
@@ -130,17 +157,21 @@ export const commitStockistTransaction = (formData , navigate) => async(dispatch
             { 'Content-Type': 'multipart/form-data' } // Pass headers object with Content-Type
         );
           
-        console.log(response);
+        // console.log(response);
 
         dispatch(commitTransactionSuccess(response.data.message));
-        navigate(-1);
+        navigate("/stockist");
         toast.success(response.data.message);
+        
+        if(setOn){
+            setOn(false)
+        }
     }
     catch(error){
-        console.log(error);
+        // console.log(error);
         dispatch(commitTransactionFail())
-        navigate(-1);
-        // toast.error(error.response.data.message)
+        // navigate(-1);
+        toast.error(error?.response?.data?.message)
     }
 
 }
@@ -150,6 +181,7 @@ export const commitStockistTransaction = (formData , navigate) => async(dispatch
 
 // Fetch proof
 export const fetchProof = (fileName, filePath) => async (dispatch) => {
+    
     dispatch(fetchProofStart());
 
     try {
@@ -165,8 +197,10 @@ export const fetchProof = (fileName, filePath) => async (dispatch) => {
 
         dispatch(fetchProofSuccess(response.data.message));
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         dispatch(fetchProofFail());
         // toast.error(error.response.data.message)
     }
 };
+
+

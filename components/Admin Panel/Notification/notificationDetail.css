@@ -1,0 +1,40 @@
+.notificationDetailBody
+{
+    width: calc(100% - 2rem);
+    min-height: 5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    /* width: calc(100svw); */
+    background-color: rgb(156, 196, 248);
+    display: flex;
+    justify-content: space-between;
+}
+
+.notificationDetailContent
+{
+    /* border: 1px solid red; */
+    width: calc(100% - 6rem);
+}
+
+.notificationDetailDate
+{
+    width: 6rem;
+    display: flex;
+
+    justify-content: start;
+    border-radius: 0.6rem;
+    background-color: rgb(49, 112, 194);
+    align-items: center;
+    justify-content: center;
+    color: white;
+    /* border: 1px solid blue; */
+}
+
+@media (max-width:620px)
+{
+    .notificationDetailBody
+    {
+        width: 98%;
+        min-height: 4rem;
+    }
+}

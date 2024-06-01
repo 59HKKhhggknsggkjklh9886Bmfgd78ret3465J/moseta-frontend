@@ -5,6 +5,7 @@ import stockSlice from "../features/stockSlice";
 import userAuth from "../features/userAuth";
 import stockistsSlice from "../features/stockistsSlice";
 import transactionSlice from "../features/transactionSlice";
+import adminSlice from "../features/adminSlice";
 
 export const store = configureStore({
     reducer:{
@@ -13,5 +14,6 @@ export const store = configureStore({
         user: userAuth,
         stockist: stockistsSlice,
         transaction: transactionSlice,
+        admin: adminSlice
     }
 })

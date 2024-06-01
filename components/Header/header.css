@@ -1,9 +1,10 @@
 .headerBody
 {
+    z-index: 5;
     user-select: none;
     height: 4rem;
     width: 100%;
-    /* background-color: green; */
+    background-color: rgb(255, 255, 255);
     box-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.322);
     display: flex;
     align-items: center;
@@ -74,5 +75,70 @@
     transition: background-color 0.2s ease;
 }
 
+.adminNotificationIcon
+{
+    position: relative;
+    cursor: pointer;
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    font-size: 1.3rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
 
-/* hello */
+    transition: all 0.1s ease;
+}
+.adminNotificationIcon:hover
+{
+    background-color: #674188;
+    color: white;
+    transition: all 0.1s ease;
+}
+
+.notificationPopup
+{
+    min-height: 60%;
+    min-width: 20%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 3rem;
+    left: 65%;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    /* right: 50%; */
+}
+
+.notificationPopupOff
+{
+    display: none;
+}
+
+.notificationPopupCloseBtn
+{
+    position: absolute;
+    right: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+/* responsive for  mobile */
+
+@media (max-width : 1000px)
+{
+    .stockistCreateTransaction
+    {
+        display: none;
+    }
+}

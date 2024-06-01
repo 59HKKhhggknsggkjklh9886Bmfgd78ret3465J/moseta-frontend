@@ -1,0 +1,76 @@
+.activeadminMenuOptions
+{
+    height: 15rem;
+    min-width: 8rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.315);
+    position: absolute;
+    border-radius: 0.5rem;
+    right: 2rem;
+    top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    /* align-items: center; */
+    /* justify-content: start; */
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    z-index: 10;
+}
+.InActiveadminMenuOptions
+{
+    display: none;
+}
+
+.activeadminMenuOptions > button,
+.activeadminMenuOptions > p
+{
+    all: unset;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    cursor: pointer;
+    /* background-color: green; */
+    display: flex;
+    /* width: 100%; */
+    width: max-content;
+    justify-content: start;
+    transition: all 0.1s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+.activeadminMenuOptions > button:hover,
+.activeadminMenuOptions > p:hover
+{
+    /* transform: translateX(0.2rem); */
+    border-bottom: 1px solid black;
+    transition: all 0.1s ease;
+}
+
+.menuOptionHomeLink
+{
+    text-decoration: none;
+    color: black;
+    width: max-content;
+}
+
+.menuOptionHomeLink
+{
+    border-bottom: 1px solid transparent;
+}
+.menuOptionHomeLink:hover
+{
+    border-bottom: 1px solid black;
+}
+
+
+
+
+
+
+@media (min-width:1000px)
+{
+    .activeadminMenuOptions > button
+    {
+        display: none;
+    }
+}

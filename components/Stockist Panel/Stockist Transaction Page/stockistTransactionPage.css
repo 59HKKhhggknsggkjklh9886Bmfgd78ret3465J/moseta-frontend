@@ -20,6 +20,19 @@
     padding: 1rem;
 }
 
+.stockTransferData
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.stockTransferDateInput
+{
+    width: 12rem;
+    padding: 0.5rem 1rem;
+}
+
 .stockistTransactionTitle
 {
     margin-left: 3rem;
@@ -133,8 +146,53 @@ row
 .stockTransferDropDown > select
 {
     cursor: pointer;
-    width: 50%;
+    width: 60%;
     height: 2.5rem;
     border: none;
     outline: none;
+}
+
+
+
+
+@media (max-width:750px)
+{
+    .productCategories
+    {
+        width: 100%;
+        /* background-color: green; */
+    }
+    
+    .stockTransferDropDown > select
+    {
+        all: unset;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        background-color: #ffffff;
+        cursor: pointer;
+        width: 80%;
+        height: 2.5rem;
+        border: none;
+        outline: none;
+    }
+}
+
+
+@media (max-width:620px)
+{
+    .stockTransferDropDown > select
+    {
+        all: unset;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        background-color: #ffffff;
+        cursor: pointer;
+        width: 100%;
+        border: 1px green solid;
+        height: 2.5rem;
+        border: none;
+        outline: none;
+    }
 }

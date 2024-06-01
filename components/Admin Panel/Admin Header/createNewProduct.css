@@ -1,0 +1,328 @@
+.createNewProductBody {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.295);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.createNewProductBodyOff {
+    display: none;
+}
+
+.createNewProductPopup {
+    height: 80%;
+    width: 70%;
+    display: flex;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.37);
+    position: relative;
+}
+
+.createNewProductCloseBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createNewProductCloseBtn > button {
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.createNewProductPasswordEye {
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #674188;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.createNewProductCreateBtn {
+    display: flex;
+    /* border: 1px solid blue; */
+    height: 100%;
+    align-items: end;
+    justify-content: end;
+}
+
+.createNewProductCreateBtn > button {
+    background-color: #674188;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    color: white;
+}
+
+.createNewProductCreateBtn > button:hover {
+    background-color: #4f2574;
+}
+
+.createNewProductTitle {
+    width: 50%;
+    background-color: #674188;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.createNewProductForm {
+    display: flex;
+    /* border: 1px solid green; */
+    overflow: scroll;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 30rem;
+}
+.createCategorySelectInput
+{
+    /* background-color: green; */
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.createNewProductInnerForm
+{
+    /* border: 1px solid red; */
+
+    height: 80%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+
+.createNewProductFormRow {
+    width: 100%;
+    /* border: 1px solid blue; */
+}
+
+.createNewProductFormPasswordCredentials
+{
+    width: 100%;
+    /* border: 1px solid green; */
+}
+
+.createNewProductFormInput:focus,
+.createNewProductFormInput:valid 
+{
+    border-bottom: 2px solid #674188;
+    background-color: #F7EFE5;
+    transition: all 0.2s ease;
+    box-shadow: 1px 1px 10px #6741883b;
+}
+
+.createNewProductFormInput {
+    height: 3rem;
+    width: 20rem;
+    border: none;
+    outline: none;
+    background-color: #F7EFE5;
+    padding: 0 1rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.createCategorySelectInput
+{
+    height: 3rem;
+    width: 20rem;
+    border: none;
+    outline: none;
+    background-color: #F7EFE5;
+    padding: 0 1rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.createNewProductPasswordInput {
+    width: calc(20rem);
+    height: 3rem;
+    border: none;
+    outline: none;
+    background-color: #F7EFE5;
+    padding: 0 1rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.createNewProductPasswordInput:focus,
+.createNewProductPasswordInput:valid {
+    border-bottom: 2px solid #674188;
+    transition: all 0.3s ease;
+    box-shadow: 1px 1px 10px #6741883b;
+}
+
+.createNewProductSelectSpecial {
+    margin: 5% 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.createNewProductSelectSpecial > label {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.createNewProductSelectSpecialRadioOption > label {
+    display: flex;
+    gap: 0.5rem;
+    width: max-content;
+    cursor: pointer;
+    align-items: center;
+}
+
+.createNewProductSpecialTrueExpectedProfit {
+    margin-top: 3%;
+}
+
+.createNewProductPasswordRow
+{
+    /* border: 1px solid blue; */
+    display: flex;
+    gap: 0.5rem;
+}
+
+
+
+@media (max-width:1050px)
+{
+    .createNewProductBody
+    {
+        min-width: max-content;
+        overflow: scroll;
+        /* position: fixed; */
+    }
+    .createNewProductPopup
+    {
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        /* border: 1px solid blue; */
+    }
+    
+    .createNewProductForm
+    {
+        all: unset;
+        /* border: 10px solid green; */
+        min-width: max-content;
+        height: 100%;
+        display: flex;
+        overflow: scroll;
+        justify-content: center;
+    }
+    
+    .createNewProductTitle
+    {
+        width: 100%;
+        min-height: 10rem;
+    }
+}
+
+@media (max-width:620px)
+{
+    .createNewProductPopup
+    {
+        width: 99%;
+    }
+
+    .createNewProductForm
+    {
+        width: 100%;
+        /* border: 1px solid green; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .createNewProductInnerForm
+    {
+        width: 100%;
+        /* border: 1px red solid; */
+        display: flex;
+        justify-content: start;
+    }
+
+    .createNewProductFormRow
+    {
+        /* border: 1px solid blue; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .createNewProductFormInput
+    {
+        /* border: 1px solid green; */
+        padding: 0 1rem;
+        width: 90%;
+    }
+    
+    .createCategorySelectInput
+    {
+        padding: 0 1rem;
+        width: 90%;
+    }
+
+    .createNewProductCredentialTitle
+    {
+        /* border: 1px solid red; */
+        
+        width: calc(90% + 2rem);
+    }
+
+    .createNewProductPasswordRow
+    {
+        /* border: 1px green solid; */
+        width: calc(90% + 2rem);
+    }
+
+    .createNewProductPasswordInput
+    {
+        width: calc(100% - 3rem);
+    }
+
+    .createNewProductCreateBtn
+    {
+        /* border: 1px solid green; */
+        display: flex;
+        justify-content: center;
+    }
+    .createNewProductCreateBtn > button
+    {
+        font-size: 1rem;
+        width: 80%;
+        /* border: 1px solid blue; */
+    }
+}

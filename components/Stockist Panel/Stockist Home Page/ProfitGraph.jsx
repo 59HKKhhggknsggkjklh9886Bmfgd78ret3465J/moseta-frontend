@@ -17,6 +17,7 @@ const ProfitGraph = () => {
         { name: '1500+', students: 40 },
         { name: '1500+', students: 40 },
       ];
+      
   return (
     <div className='barchart'>
         <BarChart width={1300} height={280} data={data}>

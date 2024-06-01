@@ -1,0 +1,194 @@
+.adminStockistTransactionBody
+{
+    min-height: 100svh;
+    width: 100%;
+
+    background-color: var(--background-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.adminStockistTransactionForm
+{
+    min-height: 88svh;
+    width: 90%;
+    margin-top: 2rem;
+    background-color: #F7EFE5;
+    padding: 1rem;
+}
+
+.adminStockistTransactionTitle
+{
+    margin-left: 3rem;
+    font-size: 2rem;
+}
+
+
+.adminStockistTransactionTitle span
+{
+    color: #674188;
+}
+
+.adminStockistTransactionOptions
+{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+}
+
+.adminStockistTransactionOptions > label
+{
+    cursor: pointer;
+    display: flex;
+    gap: 3px;
+}
+
+.adminStockistProductCategories
+{
+    /* margin-top: 3rem; */
+    background-color: white;
+    height: 3rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 40rem;
+    padding: 0 0.5rem;
+}
+
+.stockTransferRow
+{
+    margin-top: 1rem;
+}
+
+.stockTransferInput
+{
+    width: 50%;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+}
+
+.adminStockTransferData
+{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.adminStockTransferData > input
+{
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    width: 12rem;
+}
+
+
+
+
+.adminStockistTransactionProduct
+{
+    margin-top: 3rem;
+}
+
+.adminStockistProductsTable
+{
+    height: 30rem;
+    width: 40rem;
+    background-color: white;
+    overflow: scroll;
+}
+.adminStockistProductsTable > div
+{
+    display: flex;
+}
+
+.adminStockistProductTableTitle
+{
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.productTableName
+{
+    width: 20rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+row
+{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+
+.adminStockistProductTableTitle
+{
+    margin-top: 2rem;
+    display: flex;
+    width: 40rem;
+    height: 3rem;
+}
+
+.productTableQuantity
+{
+    width: 5rem;
+}
+
+.container2
+{
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    /* border: 1px solid green; */
+}
+
+
+.stockTransferDropDown
+{
+    /* border: 1px solid blue; */
+    margin-top: 3%;
+    width: 100%;
+    margin-bottom: 3%;
+}
+.stockTransferDropDown > select
+{
+    cursor: pointer;
+    width: 50%;
+    height: 2.5rem;
+    border: none;
+    outline: none;
+}
+
+
+
+
+
+
+
+@media (max-width:1000px)
+{
+    .container2
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width:800px)
+{
+    .adminStockistProductCategories
+    {
+        width: 90%;
+    }
+}
