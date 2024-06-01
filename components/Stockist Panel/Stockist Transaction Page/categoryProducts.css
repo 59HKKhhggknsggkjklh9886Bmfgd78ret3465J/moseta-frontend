@@ -188,7 +188,29 @@
     /* justify-content: space-between; */
 }
 
+.categoryProductsCategoryName
+{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid green; */
+}
 
+.categoryProductsCategoryPriceType
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid green; */
+    width: 30%;
+}
+
+.categoryProductsCategoryDiscount
+{
+    /* border: 1px solid green; */
+    width: 20%;
+}
 .categoryDiscountInput
 {
     width: 16%;
@@ -223,6 +245,14 @@
     .categoryProductsBody
     {
         width: 100%;
+    }
+
+    .categoryProductsCategoryDiscount
+    {
+        display: flex;
+        justify-content: center;
+
+        /* border: 1px solid green; */
     }
 }
 
