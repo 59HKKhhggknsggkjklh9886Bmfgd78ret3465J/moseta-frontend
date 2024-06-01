@@ -85,7 +85,7 @@
 }
 
 .createNewCategoryCreateBtn > button:hover {
-    background-color: #4f2574;
+    background-color: var(--main_theme_hover);
 }
 
 .createNewCategoryTitle {

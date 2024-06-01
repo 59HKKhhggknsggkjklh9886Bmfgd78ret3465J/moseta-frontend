@@ -71,7 +71,7 @@
 }
 .stockistCreateTransaction button:hover
 {
-    background-color: #4b246d;
+    background-color: var(--main_theme_hover);
     transition: background-color 0.2s ease;
 }
 

@@ -95,7 +95,7 @@
 }
 .adminStockistProfileCommitTransactionBtn:hover
 {
-    background-color: #492568;
+    background-color: var(--main_theme_hover);
 }
 .adminStockistDetailPageBtns
 {

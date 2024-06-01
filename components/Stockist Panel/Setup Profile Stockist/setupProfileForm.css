@@ -95,7 +95,7 @@
 }
 .setupBtn:hover
 {
-    background-color: #512a72;
+    background-color: var(--main_theme_hover);
     transition: all 0.2s ease;
 }
 .setupBtn:active

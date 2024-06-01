@@ -161,7 +161,7 @@
 .categoryProductDetailsAddBtn > button:hover
 {
     cursor: pointer;
-    background-color: #4e286e;
+    background-color: var(--main_theme_hover);
 }
 
 

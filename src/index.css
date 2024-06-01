@@ -6,7 +6,8 @@
 
 :root
 {
-    --main_theme : #3eb7d9;
+    --main_theme : #0f738e;
+    --main_theme_hover : blue
 }
 *
 {
