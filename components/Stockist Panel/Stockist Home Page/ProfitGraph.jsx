@@ -22,7 +22,7 @@ const ProfitGraph = () => {
     <div className='barchart'>
         <BarChart width={1300} height={280} data={data}>
           <Tooltip />
-          <Bar dataKey="students" fill='#674188' barSize={15} radius={10}/>
+          <Bar dataKey="students" fill='var(--main_theme)' barSize={15} radius={10}/>
           <XAxis dataKey="name" fontSize={12} stroke='rgb(0, 0, 0)'/>
           <YAxis fontSize={12} stroke='rgb(0, 0, 0)'/>
           <CartesianGrid opacity={0}/>

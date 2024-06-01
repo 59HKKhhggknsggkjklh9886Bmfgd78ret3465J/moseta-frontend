@@ -28,7 +28,7 @@
 
 .stockistTransactionTitle span
 {
-    color: #674188;
+    color: var(--main_theme);
 }
 
 .stockistTransactionOptions

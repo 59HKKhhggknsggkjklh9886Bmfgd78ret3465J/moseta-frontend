@@ -87,7 +87,7 @@
     margin-top: 1rem;
     width: max-content;
     border: none;
-    background-color: #674188;
+    background-color: var(--main_theme);
     color: white;
     padding: 0.2rem 1rem;
     cursor: pointer;

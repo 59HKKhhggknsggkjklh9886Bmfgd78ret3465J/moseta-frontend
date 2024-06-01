@@ -39,19 +39,19 @@
     border: none;
     outline: none;
     padding-left: 1rem;
-    border-bottom: 2px solid #67418800;
+    border-bottom: 2px solid var(--main_theme)00;
     transition: border-bottom 0.2s ease;
 }
 .formcredentials > div > input:valid,
 .formcredentials > div > input:focus
 {
-    border-bottom: 2px solid #674188;
+    border-bottom: 2px solid var(--main_theme);
     transition: border-bottom 0.2s ease;
 }
 .formcredentials2 > input:valid,
 .formcredentials2 > input:focus
 {
-    border-bottom: 2px solid #674188;
+    border-bottom: 2px solid var(--main_theme);
     transition: border-bottom 0.2s ease;
 }
 
@@ -62,7 +62,7 @@
     border: none;
     outline: none;
     padding-left: 1rem;
-    border-bottom: 2px solid #67418800;
+    border-bottom: 2px solid var(--main_theme)00;
     transition: border-bottom 0.2s ease;
 }
 
@@ -88,7 +88,7 @@
     border: none;
     user-select: none;
     cursor: pointer;
-    background-color: #674188;
+    background-color: var(--main_theme);
     color: white;
     border-radius: 0.3rem;
     transition: all 0.2s ease;
@@ -100,7 +100,7 @@
 }
 .setupBtn:active
 {
-    background-color: #674188;
+    background-color: var(--main_theme);
 }
 
 .uploadStockistProfilePicImg
@@ -139,7 +139,7 @@
 .custom-file-upload
 {
     cursor: pointer;
-    background-color: #674188;
+    background-color: var(--main_theme);
     color: white;
     padding: 0.5rem 2rem;
     margin-left: 3rem;

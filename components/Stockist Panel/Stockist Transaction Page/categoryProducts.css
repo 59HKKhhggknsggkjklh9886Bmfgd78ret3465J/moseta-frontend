@@ -167,7 +167,7 @@
 
 .categoryProductDetailsAddBtn > button
 {
-    background-color: #674188;
+    background-color: var(--main_theme);
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 50%;

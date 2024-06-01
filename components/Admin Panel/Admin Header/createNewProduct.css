@@ -57,7 +57,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: #674188;
+    background-color: var(--main_theme);
     color: white;
     font-size: 1.3rem;
 }
@@ -71,7 +71,7 @@
 }
 
 .createNewProductCreateBtn > button {
-    background-color: #674188;
+    background-color: var(--main_theme);
     border: none;
     outline: none;
     cursor: pointer;
@@ -86,7 +86,7 @@
 
 .createNewProductTitle {
     width: 50%;
-    background-color: #674188;
+    background-color: var(--main_theme);
     color: white;
     display: flex;
     align-items: center;
@@ -136,10 +136,10 @@
 .createNewProductFormInput:focus,
 .createNewProductFormInput:valid 
 {
-    border-bottom: 2px solid #674188;
+    border-bottom: 2px solid var(--main_theme);
     background-color: #F7EFE5;
     transition: all 0.2s ease;
-    box-shadow: 1px 1px 10px #6741883b;
+    box-shadow: 1px 1px 10px var(--main_theme)3b;
 }
 
 .createNewProductFormInput {
@@ -178,9 +178,9 @@
 
 .createNewProductPasswordInput:focus,
 .createNewProductPasswordInput:valid {
-    border-bottom: 2px solid #674188;
+    border-bottom: 2px solid var(--main_theme);
     transition: all 0.3s ease;
-    box-shadow: 1px 1px 10px #6741883b;
+    box-shadow: 1px 1px 10px var(--main_theme)3b;
 }
 
 .createNewProductSelectSpecial {

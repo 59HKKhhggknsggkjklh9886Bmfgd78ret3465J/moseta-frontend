@@ -204,7 +204,7 @@
     cursor: pointer;
     border: none;
     outline: none;
-    background-color: #674188;
+    background-color: var(--main_theme);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 0.4rem;
@@ -250,7 +250,7 @@
     cursor: pointer;
     border: none;
     outline: none;
-    background-color: #674188;
+    background-color: var(--main_theme);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 0.4rem;

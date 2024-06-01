@@ -63,7 +63,7 @@
     /* border: 1px red solid; */
     min-height: 100%;
     justify-content: center;
-    background-color: #674188;
+    background-color: var(--main_theme);
     font-size: 2rem;
     color: white;
     width: 100%;
@@ -138,13 +138,13 @@
 .clientTransferData > input:focus,
 .clientTransferData > input:valid
 {
-    border-bottom: 2px solid #674188;
+    border-bottom: 2px solid var(--main_theme);
     transition: border-bottom 0.2s ease;
 }
 
 .clientTransferCustomLabel
 {
-    background-color: #674188;
+    background-color: var(--main_theme);
     width: max-content;
     padding: 0.4rem 1rem;
     border-radius: 0.3rem;
@@ -178,7 +178,7 @@
 {
     font-weight: 400;
     cursor: pointer;
-    background-color: #674188;
+    background-color: var(--main_theme);
     color: white;
     border: none;
     outline: none;

@@ -4,7 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
+:root
+{
+    --main_theme : #3eb7d9;
+}
 *
 {
     padding: 0;
@@ -22,7 +25,7 @@
 
 ::-webkit-scrollbar-thumb
 {
-    background-color: #674188;
+    background-color: var(--main_theme);
 
     border-radius: 3rem;
 }

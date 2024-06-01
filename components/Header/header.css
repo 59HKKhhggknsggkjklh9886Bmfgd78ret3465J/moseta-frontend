@@ -38,7 +38,7 @@
 {
     font-size: 2rem;
     font-weight: 400;
-    color: #674188;
+    color: var(--main_theme);
 }
 
 .headerMenu
@@ -59,14 +59,14 @@
 .stockistCreateTransaction button
 {
     border: none;
-    background-color: #674188;
+    background-color: var(--main_theme);
     color: white;
     padding: 0.3rem 1rem;
     /* margin-right: 3rem; */
     font-size: 1.05rem;
     border-radius: 0.2rem;
     cursor: pointer;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.432);
+    /* box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.432); */
     transition: background-color 0.2s ease;
 }
 .stockistCreateTransaction button:hover
@@ -93,7 +93,7 @@
 }
 .adminNotificationIcon:hover
 {
-    background-color: #674188;
+    background-color: var(--main_theme);
     color: white;
     transition: all 0.1s ease;
 }
