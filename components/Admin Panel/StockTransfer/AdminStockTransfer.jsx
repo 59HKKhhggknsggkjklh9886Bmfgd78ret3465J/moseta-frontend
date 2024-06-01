@@ -13,7 +13,7 @@ const AdminStockTransfer = ({adminNavType, setAdminNavType}) => {
     const {loading} = useSelector((state) => state.transaction);
     const categories = stock.map((i, k) => (i?.name));
     const {accountType} = useSelector((state) => state.user);
-
+ 
     const [selectedAdminCategory, setSelectedAdminCategory] = useState({});
 
     const dispatch = useDispatch();
@@ -62,18 +62,7 @@ const AdminStockTransfer = ({adminNavType, setAdminNavType}) => {
                     </select>
                 </div>
                 
-                <div className='adminStockTransferData'>
-                    <label  className="adminStockTransferLabel">
-                        Date
-                    </label>
-                    <input type='date' required
-                        onKeyPress={(event) => {
-                            if (!/[0-9]/.test(event.key)) {
-                            event.preventDefault();
-                            }
-                        }}
-                    />
-                </div>
+                
                     
                 <div className='container2'>
                     <AdminCategoryProducts selectedAdminCategory = {selectedAdminCategory} />

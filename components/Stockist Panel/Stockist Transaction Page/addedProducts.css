@@ -68,6 +68,22 @@
     background-color: rgb(255, 79, 79); 
 }
 
+.stockTransferDate
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.stockTransferDate > input
+{
+    height: 3rem;
+    padding: 0 1rem;
+    width: 13rem !important;
+    border: none;
+    outline: none;
+    background-color: #f0e3bb;
+}
+
 .addedProductDelete
 {
     cursor: pointer;

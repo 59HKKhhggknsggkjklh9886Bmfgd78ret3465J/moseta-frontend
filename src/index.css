@@ -6,9 +6,10 @@
 
 :root
 {
-    --main_theme : #0f738e;
-    --main_theme_hover : blue
+    --main_theme : #178fb0;
+    --main_theme_hover : #116a82;
 }
+
 *
 {
     padding: 0;
@@ -27,8 +28,12 @@
 ::-webkit-scrollbar-thumb
 {
     background-color: var(--main_theme);
-
+    
     border-radius: 3rem;
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background-color: var(--main_theme_hover);
 }
 
 *

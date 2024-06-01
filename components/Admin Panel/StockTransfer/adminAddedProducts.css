@@ -237,6 +237,12 @@
 
 }
 
+.adminStockTransferData > input
+{
+    background-color: rgb(240, 242, 204);
+    min-width: 13rem !important;
+}
+
 .totalPriceDiv{
     display: flex;
     justify-content: space-between;
@@ -318,5 +324,16 @@
     {
         /* border: 1px solid black; */
         font-size: 1.4rem;
+    }
+
+    .adminStockTransferData
+    {
+        /* border: 1px solid green; */
+        width: 50%;
+    }
+    .adminStockTransferData > input
+    {
+        background-color: rgb(240, 242, 204);
+        width: 10% !important;
     }
 }

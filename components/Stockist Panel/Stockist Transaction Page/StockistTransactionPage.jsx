@@ -93,18 +93,7 @@ const StockistTransactionPage = ({adminNavType, setAdminNavType}) => {
                         </select>
                     </div>
                     
-                <div className='stockTransferData'>
-                    <label  className="stockTransferLabel">
-                        Date
-                    </label>
-                    <input type='date' required
-                        onKeyPress={(event) => {
-                            if (!/[0-9]/.test(event.key)) {
-                            event.preventDefault();
-                            }
-                        }}
-                    />
-                </div>
+                
                     
                     
                     <p>Select Product Category :</p>

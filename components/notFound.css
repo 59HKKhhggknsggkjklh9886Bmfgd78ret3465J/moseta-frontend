@@ -1,0 +1,29 @@
+.notFoundBody
+{
+    height: calc(100svh - 4rem);
+    width: 100%;
+    display: flex;
+    background-color: rgb(241, 24, 24);
+}
+
+.notFoundBody > div
+{
+    font-size: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid green; */
+}
+
+
+.notFoundBody > p
+{
+    padding-left: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    /* border: 1px solid green; */
+    font-size: 10vw;
+    font-weight: 1000;
+}

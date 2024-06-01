@@ -129,6 +129,19 @@ const AdminAddedProducts = () => {
                 <form className='cartDetailsContainer' onSubmit={(e) => { e.preventDefault(); commitTransaction(); }}>
 
                     <div className='additionalCharges'>
+                        <div className='adminStockTransferData'>
+                            <label  className="adminStockTransferLabel">
+                                Date
+                            </label>
+                            <input type='date' required
+                                onKeyPress={(event) => {
+                                    if (!/[0-9]/.test(event.key)) {
+                                    event.preventDefault();
+                                    }
+                                }}
+                            />
+                        </div>
+
                         <label>
                             <p>Transportation Charges</p>
                             <input
