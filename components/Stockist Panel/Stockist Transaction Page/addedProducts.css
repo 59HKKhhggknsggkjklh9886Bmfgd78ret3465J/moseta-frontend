@@ -1,9 +1,10 @@
 .addedProductsBody
 {
-    width: 45%;
+    width: 40%;
     background-color: rgb(255, 255, 255);
     margin-top: 2rem;
     padding: 0.5rem 1rem;
+    /* border: 1px solid red; */
 }
 
 .addedProductsTitle
@@ -14,20 +15,33 @@
 
 .addedProduct
 {
+    flex-direction: column;
     display: flex;
     padding: 0.5rem ;
     border-radius: 0.3rem;
-    background-color: rgb(78, 235, 138);
+    background-color: rgb(169, 255, 187);
     justify-content: space-between;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 .addedProduct > p
 {
     display: flex;
     align-items: center;
+    width: 100%;
+    border-bottom: 1px solid green;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    /* border: 1px solid green; */
 }
 
+.addedProductDetails
+{
+    display: flex;
+    /* border: 1px solid blue; */
+    width: 100%;
+    justify-content: space-between;
+}
 .addedProduct > div
 {
     display: flex;
@@ -39,7 +53,7 @@
     user-select: none;
 }
 
-/* .addedProductSno
+/* .addedProductsno
 {
     background-color: green;
     width: 4rem;
@@ -50,13 +64,15 @@
 
 .addedProductDelete:hover
 {
-    cursor: pointer;
-    background-color: rgb(20, 129, 62);
+    color: white;  
+    background-color: rgb(255, 79, 79); 
 }
 
 .addedProductDelete
 {
-    background-color: rgb(28, 167, 81);
+    cursor: pointer;
+    color: rgb(255, 79, 79);  
+    background-color: white; 
     border: none;
     outline: none;
     display: flex;
@@ -68,7 +84,15 @@
     border-radius: 50%;
 }
 
-.addedProductSno
+.addedProductDeleteParent
+{
+    /* border: 1px solid green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addedProductsno
 {
     /* border: 1px solid green; */
     width: 1.5rem;
@@ -114,17 +138,6 @@
     color: white;
 }
 
-.addedProductPrice
-{
-    /* border: 1px solid blue; */
-}
-
-.addedProductDelete:hover
-{
-    color: rgb(255, 79, 79);  
-    background-color: white;  
-    /* border: 1px solid blue; */
-}
 
 
 .addedProductsDetails
@@ -142,12 +155,21 @@
 
 .addedProductDiscount
 {
-    background-color: rgb(25, 184, 78);
+    background-color: rgb(76, 233, 129);
     width: 3rem;
+    border-radius: 0.3rem;
     height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.addedProductQuantity > input
+{
+    width: 3rem;
+    border: none;
+    outline: none;
+    padding: 0.5rem 0.5rem;
 }
 
 .cartDetails > div>p
@@ -223,7 +245,8 @@
     margin-top: 1rem;
 }
 
-.uploadProofBtn{
+.uploadProofBtn
+{
     cursor: pointer;
     border: none;
     outline: none;
@@ -231,9 +254,69 @@
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 0.4rem;
+    /* border: 1px solid black; */
+    /* width: 50%; */
 }
 
 .uploadProofBtn p {
+    display: flex;
+    justify-content: center;
     /* border: 1px solid white; */
-    margin: 0 auto;
+    /* margin: 0 auto; */
+}
+
+.cartDetails
+{
+    /* border: 1px solid red; */
+}
+
+.additionalCharges p
+{
+    width: 50%;
+    /* border: 1px solid blue; */
+}
+.additionalCharges input
+{
+    width: 50%;
+}
+
+.cartDetailsContainer
+{
+    width: 100%;
+    /* border: 1px solid green; */
+}
+
+
+
+@media (max-width:1000px)
+{
+    .addedProductsBody
+    {
+        width: 100%;
+        /* border: 1px solid green; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .addedProductsDetails
+    {
+        /* border: 1px solid red; */
+        width: 100%;
+    }
+}
+
+@media (max-width:630px)
+{
+    .addedProductsDetails
+    {
+        width: 100%;
+    }
+
+    .totalPriceDiv
+    {
+        /* border: 1px solid black; */
+        font-size: 1.4rem;
+    }
 }

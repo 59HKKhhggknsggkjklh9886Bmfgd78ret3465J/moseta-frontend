@@ -96,15 +96,15 @@ const AdminStockistDetailPage = () => {
                     <h2>₹ {stockist?.profitThisMonth}</h2>
                 </div>
                 
-                <div className='stockistDetailPageBtns'>
+                <div className='adminStockistDetailPageBtns'>
 
                     <Link to={`/admin-stock-transfer/${params.id}`}> 
-                        <button className='editadminStockistProfileCommitTransactionBtn'> Stock Transfer </button>
+                        <button className='adminStockistProfileCommitTransactionBtn'> Stock Transfer </button>
                     </Link>
                     
-                    <button className='editadminStockistProfileCommitTransactionBtn' onClick={()=>setAdminBalanceTransferOn(true)}> Balance Transfer </button>
+                    <button className='adminStockistProfileCommitTransactionBtn' onClick={()=>setAdminBalanceTransferOn(true)}> Balance Transfer </button>
                     
-                    <button className='editadminStockistProfileDeleteBtn' onClick={deleteStockistHandler}>Delete</button>
+                    <button className='adminStockistProfileDeleteBtn' onClick={deleteStockistHandler}>Delete</button>
 
                 </div>
 
@@ -117,22 +117,22 @@ const AdminStockistDetailPage = () => {
                 <ProfitGraph/>
             </div> */}
             
-            <div className='tableContainer'>
+            <div className='tableContainerSTK'>
 
-                <div>
+                <div className='adminStockistMainTable'>
                     <h2 className='tableHeading'>Approved Transactions</h2>
                     <AdminsStockistTableConfirmed transactions={revTransactions}/>
                 </div>
 
-                {/* <div>
+                <div className='adminStockistMainTable'>
                     <h2 className='tableHeading'>Pending Transactions</h2>
                     <AdminsStockistTablePending transactions={revTransactions} />
                 </div>
 
-                <div>
+                <div className='adminStockistMainTable'>
                     <h2 className='tableHeading'>Rejected Transactions</h2>
                     <RejectedTransactionsTable transactions={rejectedTransactions} />
-                </div> */}
+                </div>
             </div>
 
             <AdminBalanceTransfer adminBalanceTransferOn={adminBalanceTransferOn} setAdminBalanceTransferOn={setAdminBalanceTransferOn}/>

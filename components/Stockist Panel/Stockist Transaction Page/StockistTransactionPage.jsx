@@ -10,7 +10,7 @@ import Loader from '../../Loader/Loader';
 const StockistTransactionPage = ({adminNavType, setAdminNavType}) => {
 
     // fetching from redux store
-    const { stock } = useSelector((state) => state.stock);
+    const { stock } = useSelector((state) => state.stock); 
     const {selectedClients} = useSelector((state) => state.stock);
     const {loading} = useSelector((state) => state.transaction);
     const {clients , accountType} = useSelector((state) => state.user);
@@ -84,7 +84,7 @@ const StockistTransactionPage = ({adminNavType, setAdminNavType}) => {
                 <div className='stockistTransactionProduct'>
                     <div className=''>
                         <p>Clients : </p>
-                        <select className='productCategories' onChange={(e) => setSelectedClient(e.target.value)}>
+                        <select className='stockistProductCategories' onChange={(e) => setSelectedClient(e.target.value)}>
                             <option>Select Client</option>
                             {selectedClients.map((client , key) => (
                             
@@ -93,22 +93,22 @@ const StockistTransactionPage = ({adminNavType, setAdminNavType}) => {
                         </select>
                     </div>
                     
-                        <div className='stockTransferData'>
-                            <label  className="stockTransferLabel">
-                                Date
-                            </label>
-                            <input className='stockTransferDateInput' required type='date'
-                                onKeyPress={(event) => {
-                                    if (!/[0-9]/.test(event.key)) {
-                                    event.preventDefault();
-                                    }
-                                }}
-                            />
-                        </div>
+                <div className='stockTransferData'>
+                    <label  className="stockTransferLabel">
+                        Date
+                    </label>
+                    <input type='date' required
+                        onKeyPress={(event) => {
+                            if (!/[0-9]/.test(event.key)) {
+                            event.preventDefault();
+                            }
+                        }}
+                    />
+                </div>
                     
                     
                     <p>Select Product Category :</p>
-                    <select className='productCategories' name="selectedCategory" onChange={(e) => handleCategoryChange(e)}>
+                    <select className='stockistProductCategories' name="selectedCategory" onChange={(e) => handleCategoryChange(e)}>
                         <option value="">Select Category</option>
                         {categories.map((item, key) => (
                             <option key={key} value={item._id}>{item.name}</option>

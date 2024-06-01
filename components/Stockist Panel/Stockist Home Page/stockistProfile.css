@@ -168,7 +168,7 @@
 {
     .stockistProilePicContainer
     {
-        border: 1px solid green;
+        /* border: 1px solid green; */
         display: flex;
         width: 100%;
         justify-content: center;
@@ -178,7 +178,7 @@
 
     .stockistProfileData
     {
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
         width: 100%;
         display: flex;
         /* align-items: center; */
@@ -194,12 +194,12 @@
     .stockistProfileData > div > h1
     {
         width: 30%;
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
     .stockistProfileData > div > h2
     {
         width: 50%;
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
 
     .stockistProfilePicBackground
